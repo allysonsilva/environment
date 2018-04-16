@@ -2,6 +2,8 @@
 
 ## [Hyper.js](https://hyper.is)
 
+![Screenshot](HyperJS/screenshot.png)
+
 ### Plugins
 
 - [**hyperborder**](https://github.com/webmatze/hyperborder)
