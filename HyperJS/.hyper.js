@@ -101,7 +101,9 @@ module.exports = {
         shellArgs: ['--login'],
 
         // for environment variables
-        env: {},
+        env: {
+            HYPER_SHELL: true
+        },
 
         // set to false for no bell
         bell: false,
