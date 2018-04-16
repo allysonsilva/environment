@@ -1,6 +1,6 @@
 # My Environment ⚡️
 
-## [Hyper.js](https://hyper.is)
+## [Hyper.js - 1.4.8](https://hyper.is)
 
 ![Screenshot](HyperJS/screenshot.png)
 
