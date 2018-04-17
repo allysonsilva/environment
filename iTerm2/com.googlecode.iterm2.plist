@@ -278,9 +278,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>270 389 715 278 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>202 392 796 473 0 0 1440 900 </string>
+	<string>358 417 796 473 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>171 148 810 602 0 0 1440 900 </string>
+	<string>73 162 1234 723 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -857,7 +857,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FuraMonoNerdFontC-Regular 20</string>
+			<string>FuraMonoNerdFontC-Regular 18</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
