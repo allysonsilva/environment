@@ -11,7 +11,7 @@ module.exports = {
         updateChannel: 'stable',
 
         // default font size in pixels for all tabs
-        fontSize: 24,
+        fontSize: 17,
 
         // font family with optional fallbacks
         fontFamily:
