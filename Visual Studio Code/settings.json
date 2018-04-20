@@ -1,0 +1,494 @@
+{
+    "[javascript]": {
+        "editor.formatOnSave": true
+    },
+    "[vue]": {
+        "editor.formatOnSave": true
+    },
+    "[json]": {
+        "editor.formatOnSave": true
+    },
+    "[html]": {
+        "editor.formatOnSave": true
+    },
+    "[scss]": {
+        "editor.formatOnSave": true
+    },
+    //
+    // Better Zen mode
+    // "workbench.editor.showTabs": false,
+    // "editor.minimap.enabled": false,
+    // "editor.codeLens": false,
+    // "workbench.activityBar.visible": false,
+    //
+    // "editor.minimap.enabled": false,
+    // "editor.lineNumbers": "off",
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.formatOnSave": false,
+    "editor.fontSize": 15,
+    "editor.letterSpacing": 0,
+    "editor.lineHeight": 35,
+    "editor.fontFamily": "Monaco",
+    "editor.fontWeight": "bold",
+    "editor.smoothScrolling": true,
+    "editor.renderWhitespace": "all",
+    "editor.trimAutoWhitespace": true,
+    "editor.renderLineHighlight": "all",
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": true,
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.renderIndentGuides": true,
+    "editor.minimap.enabled": true,
+    "editor.cursorStyle": "line-thin",
+    "editor.cursorWidth": 5,
+    "editor.tabSize": 4,
+    "editor.autoClosingBrackets": true,
+    "editor.selectionHighlight": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.folding": true,
+    "editor.matchBrackets": true,
+    "editor.useTabStops": true,
+    "editor.dragAndDrop": true,
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "editor.rulers": [50, 72, 80, 120],
+    "editor.wordWrapColumn": 72,
+    "editor.wordWrap": "off", // Git commit => [bounded || wordWrapColumn]
+    "editor.colorDecorators": true,
+    "editor.renderControlCharacters": true,
+    "editor.fontLigatures": true,
+    "editor.tabCompletion": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+    //
+    "workbench.commandPalette.preserveInput": true,
+    "workbench.editor.enablePreview": true,
+    "workbench.editor.showIcons": true,
+    "workbench.editor.showTabs": true,
+    // "workbench.fontAliasing": "antialiased",
+    "workbench.iconTheme": "vscode-icons",
+    //
+    "problems.autoReveal": true,
+    "problems.decorations.enabled": true,
+    //
+    "php.suggest.basic": false,
+    "php.validate.enable": true,
+    "php.validate.executablePath": "/usr/local/opt/php/bin/php",
+    "php.validate.run": "onType",
+    //
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.idea": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true,
+        "**/.history": true,
+    },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/node_modules/**": true,
+        "**/vendor/**": true,
+        "**/.history": true,
+    },
+    "files.associations": {
+        ".php_cs": "php",
+        ".php_cs.dist": "php",
+        "*.blade.php": "blade",
+        "*.php": "php",
+        "*.vue": "vue",
+        "*.js": "javascript"
+    },
+    "files.hotExit": "onExitAndWindowClose",
+    //
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/.history": true,
+    },
+    //
+    "window.restoreFullscreen": true,
+    "window.openFilesInNewWindow": "on",
+    "window.openFoldersInNewWindow": "on",
+    "window.zoomLevel": 0,
+    "window.title": "${activeEditorMedium}${separator}${rootName} ${dirty}",
+    //
+    "markdown.preview.scrollEditorWithPreview": true,
+    //
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.sortOrder": "default",
+    "explorer.openEditors.visible": 0,
+    //
+    "debug.allowBreakpointsEverywhere": true,
+    "debug.inlineValues": false,
+    "debug.openExplorerOnEnd": true,
+    "debug.hideActionBar": false,
+    "debug.openDebug": "openOnFirstSessionStart",
+    "debug.showInStatusBar": "always",
+    //
+    "javascript.format.enable": false, // Disable default JavaScript formatter (For Prettier)
+    // Disabling the default JavaScript formatter allows Prettier to handle our code formatting.
+    "typescript.format.enable": true,
+    "javascript.validate.enable": true, // (For Flow - Disable default JavaScript validation)
+    "typescript.validate.enable": true,
+    "json.format.enable": true,
+    //
+    "html.autoClosingTags": true,
+    "html.format.enable": true,
+    "html.format.wrapLineLength": 120,
+    "html.validate.scripts": true,
+    "html.validate.styles": true,
+    //
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.lineHeight": 1.3,
+    "terminal.integrated.fontFamily": "Monaco",
+    "terminal.integrated.env.osx": {
+        "TERMINAL_VSCODE": "true"
+    },
+    //
+    "git.enabled": true,
+    "git.path": "/usr/local/bin/git",
+    "git.autorefresh": true,
+    "git.autofetch": true,
+    //
+    "emmet.includeLanguages": {
+        "vue": "html",
+        "vue-html": "html",
+        "blade": "html",
+        "laravel-blade": "html"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "workbench.colorCustomizations": {
+        "scrollbarSlider.activeBackground": "#2979FF50",
+        "editorSuggestWidget.highlightForeground": "#2979FF",
+        "editor.selectionBackground": "#0FF3",
+        "textLink.foreground": "#2979FF",
+        "progressBar.background": "#2979FF",
+        "pickerGroup.foreground": "#2979FF",
+        "tab.activeBorder": "#00000000", // Transparent
+        "list.activeSelectionBackground": "#1e1e1ec4",
+        "list.activeSelectionForeground": "#fff",
+        "list.highlightForeground": "#2979FF",
+        "list.inactiveSelectionForeground": "#2979FF",
+        "activityBar.background": "#2979FF",
+        "activityBar.foreground": "#ffffff",
+        "activityBarBadge.background": "#D4D4D4",
+        "activityBarBadge.foreground": "#1E1E1E",
+        "statusBar.background": "#404040",
+
+        // Border Only
+        "titleBar.border": "#0174f8",
+        "sideBar.border": "#0174f8",
+        "activityBar.border": "#0b1015",
+        "tab.border": "#0174f8",
+        "editorGroupHeader.tabsBorder": "#0174f8",
+        "panel.border": "#0174f8",
+        "statusBar.border": "#0174f8",
+        "terminal.border": "#0174f8"
+    },
+
+    // ==================
+    // Extension Settings
+    // ==================
+
+    // ================
+    // PHP Intelephense
+    // ================
+    "intelephense.completionProvider.backslashPrefix": false,
+    "intelephense.debug.enable": true,
+    "intelephense.completionProvider.addUseDeclaration": true,
+    "intelephense.formatProvider.enable": true,
+    "intelephense.trace.server": "messages",
+
+    // ==============
+    // PHP DocBlocker
+    // ==============
+    "php-docblocker.useShortNames": true,
+    "php-docblocker.gap": true,
+    "php-docblocker.qualifyClassNames": true,
+
+    // ======================
+    // PHP Namespace Resolver
+    // ======================
+    "namespaceResolver.exclude": "**/node_modules/**,**/.history/**", // Exclude glob pattern while finding files
+    "namespaceResolver.showMessageOnStatusBar": false, // Show message on status bar instead of notification box
+    "namespaceResolver.autoSort": true, // Auto sort after imports
+    "namespaceResolver.sortAlphabetically": false, // Sort imports in alphabetical order instead of line length
+    "namespaceResolver.leadingSeparator": true, // Expand class with leading namespace separator
+
+    // =====
+    // Vetur
+    // =====
+    // "vetur.validation.script": false,
+    // "vetur.validation.style": false,
+    // "vetur.validation.template": false,
+    "vetur.format.defaultFormatter.html": "js-beautify-html",
+    "vetur.format.defaultFormatterOptions": {
+        "js-beautify-html": {
+            // js-beautify-html settings, see https://github.com/vuejs/vetur/blob/master/server/src/modes/template/services/htmlFormat.ts
+            "wrap_attributes": "force-aligned"
+        }
+    },
+
+    // ========
+    // Prettier
+    // ========
+    "prettier.arrowParens": "avoid",
+    "prettier.bracketSpacing": true,
+    "prettier.disableLanguages": [],
+    "prettier.eslintIntegration": true,
+    "prettier.stylelintIntegration": false,
+    "prettier.ignorePath": ".prettierignore",
+    // "prettier.parser": "babylon",
+    "prettier.printWidth": 120,
+    "prettier.proseWrap": "preserve",
+    "prettier.requireConfig": false,
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 4,
+    "prettier.trailingComma": "none",
+    "prettier.useTabs": false,
+
+    // ====
+    // Flow
+    // ====
+    // "flow.enabled": true,
+    // "flow.fileExtensions": [
+        // ".js",
+        // ".mjs",
+        // ".jsx",
+        // ".flow",
+        // ".json"
+    // ],
+    // "flow.stopFlowOnExit": true,
+    // "flow.pathToFlow": "/usr/local/bin/flow",
+    // "flow.pathToFlow": "${workspaceRoot}/node_modules/.bin/flow",
+    // "flow.useNPMPackagedFlow": true,
+    // "flow.showStatus": true,
+    // "flow.runOnEdit": true,
+    // "flow.runOnAllFiles": false,
+
+    // =========
+    // StyleLint
+    // =========
+    // "css.validate": false,
+    // "scss.validate": false,
+    // "stylelint.enable": false,
+    // "stylelint.configOverrides": null,
+    // "stylelint.additionalDocumentSelectors": [
+    //     "vue",
+    //     "javascriptreact"
+    // ],
+
+    // ======
+    // ESLint
+    // ======
+    "eslint.enable": true,
+    "eslint.options": {
+        "extensions": [
+            // List of file extensions to activate eslint
+            ".html",
+            ".js",
+            ".vue",
+            ".jsx"
+        ]
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        {
+            "language": "vue",
+            "autoFix": true // Autofix any fixable errors when linting
+        }
+    ],
+    "eslint.workingDirectories": [],
+    "eslint.packageManager": "npm",
+    "eslint.trace.server": "off",
+    "eslint.run": "onType",
+    "eslint.alwaysShowStatus": false,
+    "eslint.autoFixOnSave": true,
+
+    // ===================
+    // Material Icon Theme
+    // ===================
+    "material-icon-theme.folders.color": "#1E90FF",
+    "material-icon-theme.folders.theme": "specific",
+    "material-icon-theme.languages.associations": {
+        "php": "php_elephant"
+    },
+    "material-icon-theme.folders.associations": {
+        "vendor": "php"
+    },
+
+    // ==============
+    // Material Theme
+    // ==============
+    "materialTheme.cache.workbench.settings": {
+        "accent": "Blue",
+        "themeColours": "Darker High Contrast",
+        "accentPrevious": "Cyan"
+    },
+
+    // =========
+    // Bookmarks
+    // =========
+    "bookmarks.navigateThroughAllFiles": true,
+    "bookmarks.saveBookmarksInProject": true,
+    "bookmarks.treeview.visible": true,
+
+    // ======================
+    // Highlight Matching Tag
+    // ======================
+    "highlight-matching-tag.enabled": true,
+    "highlight-matching-tag.highlightSelfClosing": true,
+    "highlight-matching-tag.leftStyle": {
+        "borderWidth": "1px",
+        "borderStyle": "solid",
+        "borderColor": "#1E90FF",
+        "borderRadius": "5px"
+    },
+    "highlight-matching-tag.rightStyle": {
+        "borderWidth": "1px",
+        "borderStyle": "solid",
+        "borderColor": "#1E90FF",
+        "borderRadius": "5px"
+    },
+    "highlight-matching-tag.style": {
+        "textDecoration": "underline"
+    },
+
+    // ===========
+    // Import Cost
+    // ===========
+    "importCost.smallPackageSize": 50,
+    "importCost.showCalculatingDecoration": true,
+    "importCost.bundleSizeDecoration": "both",
+    "importCost.javascriptExtensions": ["\\.jsx?$"],
+
+    // ============================================
+    // Bracket Pair Colorizer | Colorizer Pair Pair
+    // ============================================
+    "bracketPairColorizer.forceUniqueOpeningColor": false,
+    "bracketPairColorizer.forceIterationColorCycle": false,
+    "bracketPairColorizer.colorMode": "Consecutive",
+    "bracketPairColorizer.consecutivePairColors": ["()", "[]", "{}", ["#32CD32", "#9400D3", "#1E90FF"], "Red"],
+
+    // ===============
+    // Better Comments
+    // ===============
+    "better-comments.multilineComments": true,
+    "better-comments.tags": [
+        {
+            "tag": "!",
+            "color": "#FF2D00",
+            "strikethrough": false
+        },
+        {
+            "tag": "?",
+            "color": "#3498DB",
+            "strikethrough": false
+        },
+        {
+            "tag": "//",
+            "color": "#474747",
+            "strikethrough": true
+        },
+        {
+            "tag": "todo",
+            "color": "#FF8C00",
+            "strikethrough": false
+        },
+        {
+            "tag": "*",
+            "color": "#98C379",
+            "strikethrough": false
+        }
+    ],
+
+    // ==============
+    // TODO Highlight
+    // ==============
+    // "todohighlight.keywordsPattern": "TODO:|FIXME:|DEBUG:|REVIEW:",
+    "todohighlight.defaultStyle": {
+        // "color": "red",
+        // "backgroundColor": "#ffab00",
+        // "overviewRulerColor": "#ffab00",
+        "cursor": "pointer",
+        "border": "1px solid rgb(115, 106, 98)",
+        "borderRadius": "3px",
+        "isWholeLine": false
+        //other styling properties goes here ...
+    },
+    "todohighlight.isEnable": true,
+    "todohighlight.isCaseSensitive": true,
+    "todohighlight.keywords": [
+        "DEBUG:",
+        "REVIEW:",
+        {
+            "text": "NOTE:",
+            "color": "#ff0000",
+            "backgroundColor": "yellow",
+            "overviewRulerColor": "grey"
+        },
+        {
+            "text": "TODO:",
+            "color": "#940000",
+            "border": "1px solid #940000",
+            "backgroundColor": "rgba(255, 69, 0, 0.5)"
+            //other styling properties goes here ...
+        }
+    ],
+    "todohighlight.include": [
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.vue",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.html",
+        "**/*.php",
+        "**/*.blade.php",
+        "**/*.css",
+        "**/*.scss"
+    ],
+    "todohighlight.exclude": [
+        "**/node_modules/**",
+        "**/bower_components/**",
+        "**/dist/**",
+        "**/build/**",
+        "**/.vscode/**",
+        "**/.git/**",
+        "**/.history/**",
+        "**/_output/**",
+        "**/*.min.*",
+        "**/*.map",
+        "**/.next/**"
+    ],
+    "todohighlight.maxFilesForSearch": 5120,
+    "todohighlight.toggleURI": true,
+
+    // =============
+    // Local History
+    // =============
+    "local-history.enabled": 1,
+    "local-history.daysLimit": 30,
+    "local-history.absolute": false,
+    "local-history.exclude": [
+        "**/.history/**",
+        "**/.vscode/**",
+        "**/node_modules/**",
+        "**/vendor/**"
+    ],
+    "local-history.maxDisplay": 20,
+    "local-history.path": "",
+    "local-history.saveDelay": 0,
+    "workbench.activityBar.visible": true
+}
