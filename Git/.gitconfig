@@ -1,0 +1,202 @@
+[user]
+    name = Allyson Silva
+    email = allysonsilvaweb@gmail.com
+
+[core]
+    editor = code --wait
+    excludesfile = ~/.gitignore
+    pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
+
+[credential]
+    helper = osxkeychain
+
+[status]
+    showUntrackedFiles = all
+
+[log]
+    date = iso
+
+[merge]
+    # @see https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line
+    tool = vscode
+    conflictstyle = diff3
+    log = true
+
+[mergetool]
+    keepBackup = true
+    prompt = false
+
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+    trustExitCode = true
+
+[diff]
+    tool = vscode
+
+[difftool]
+    prompt = false
+
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+
+[color]
+    ui = true
+    pager = true
+    status = always
+    interactive = auto
+    branch = auto
+    diff = always
+    decorate = auto
+
+[color "branch"]
+    current = magenta italic
+    local = green italic
+    remote = yellow italic
+    plain = white
+
+[color "diff"]
+    plain = white bold
+    meta = normal
+    frag = cyan
+    old = red bold italic
+    new = green bold italic
+    whitespace = red ul
+
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
+
+[color "status"]
+    header = white
+    added = green bold
+    changed = red bold
+    untracked = yellow bold italic
+
+[push]
+    default = current
+
+[pull]
+    default = current
+    rebase = true
+
+[alias]
+    i = !git init && git add . && git commit -m \"Initial Commit\"
+    s = status
+    co = checkout
+    cl = !sh -c 'git clone https://github.com/$1 $(basename $1)' -
+    trim = !git reflog expire --expire=now --all && git gc --prune=now
+    hooks = !cp -r ~/.git_template/hooks $(git rev-parse --show-toplevel)/.git/
+    stats = shortlog -s -n --all --no-merges
+    join = !sh -c "CURRENT_BRANCH=`git bcurrent` && git rebase origin/$1 && git push origin :$CURRENT_BRANCH -fu && git checkout $1 && git merge $CURRENT_BRANCH"
+
+    al = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
+    aliases = !git config --get-regexp alias | sed 's/alias.//' | sed 's/ /: /' | sort
+
+    release = "!release() { \
+                            local name=$(basename $(git rev-parse --show-toplevel))-$(git describe --always --tags); \
+                            git archive --prefix ${name}/ --output ${name}.tar.gz HEAD; \
+                            echo; \
+                            echo Archive: [${name}.tar.gz]; \
+                        }; release"
+    reltag = !sh -c 'git tag v$1 && git pst' -
+    unreltag = !sh -c 'git tag -d v$1 && git pso :v$1' -
+
+    b = branch
+    bfzf = !sh -c 'git bl | fzf'
+    bcurrent = rev-parse --abbrev-ref HEAD
+    ba = branch -av
+    bd = branch -d
+    br = branch -r
+    bl = !sh -c 'git branch -a | sed -Ee \"s:^\\*? *::\" | sed -Ee \"s:^(remotes/[^/]+)?/::g\" | grep -v \"HEAD -> origin/master\" | sort | uniq'
+
+    c = commit
+    cm = commit -m
+    cam = commit -am
+    cem = commit --allow-empty -m
+    ca = commit --amend
+    cad = commit -a --amend
+    ced = commit --allow-empty --amend
+
+    ps = push
+    psf = push -f
+    psu = push -u
+    pst = push --tags
+    pso = push origin
+    psao = push --all origin
+    psfo = push -f origin
+    psuo = push -u origin
+    psom = push origin master
+    psaom = push --all origin master
+    psfom = push -f origin master
+    psuom = push -u origin master
+    psoc = !git push origin $(git bfzf)
+    psaoc = !git push --all origin $(git bfzf)
+    psfoc = !git push -f origin $(git bfzf)
+    psuoc = !git push -u origin $(git bfzf)
+    psdc = !git push origin :$(git bfzf)
+
+    pl = pull
+    pb = pull --rebase
+    plo = pull origin
+    pbo = pull --rebase origin
+    plom = pull origin master
+    ploc = !git pull origin $(git bfzf)
+    pbom = pull --rebase origin master
+    pboc = !git pull --rebase origin $(git branch | fzf)
+    plu = pull upstream
+    plum = pull upstream master
+    pluc = !git pull upstream $(git bfzf)
+    pbum = pull --rebase upstream master
+    pbuc = !git pull --rebase upstream $(git bfzf)
+    plod = pull origin development
+    plos = pull origin staging
+
+    rb = rebase
+    rba = rebase --abort
+    rbc = rebase --continue
+    rbi = rebase --interactive
+    rbs = rebase --skip
+
+    re = reset
+    rh = reset HEAD
+    reh = reset --hard
+    rem = reset --mixed
+    res = reset --soft
+    rehh = reset --hard HEAD
+    remh = reset --mixed HEAD
+    resh = reset --soft HEAD
+    refor = !git fetch --all && git reset --hard origin/master
+    reall = !git reset --hard && git clean -f -d
+    reprev = reset HEAD^
+
+    sa = stash apply
+    sc = stash clear
+    sd = stash drop
+    sl = stash list
+    sp = stash pop
+    ss = stash save
+    sw = stash show
+
+    pr = "!f() { branch=pr-$1 ; default_remote=$(git remote | grep -v origin | head -1) ; remote=${2:-${default_remote}} ; git fetch $remote pull/$1/merge:$branch ; git checkout $branch ; } ; f"
+    delpr = "!f() { branch=pr-$1 ; if [ $(git rev-parse --abbrev-ref HEAD) = $branch ] ; then git checkout -f master ; fi ; git branch -D $branch ;  } ; f"
+    recent = for-each-ref --sort committerdate --format '%(objectname:short) %(objecttype) %(authordate:short) %(refname:short) - %(authorname)' refs/remotes/
+    rec-feat = for-each-ref --sort committerdate --format '%(objectname:short) %(objecttype) %(authordate:short) %(refname:short) - %(authorname)' refs/remotes/*/feature*
+    sl = shortlog --numbered --no-merges --format='* %Cred[%h]%Creset %s %Cgreen(%cr)%Creset'
+    vlog = log --first-parent -m --stat
+
+    log-changes = "!f() { git log --pretty=format:'* %s' $1..$2; }; f"
+    log-unmerged-commits = "!sh -c 'git log $1 --format='''%H''' --not master --' -"
+    log-unmerged-commits-between = "!sh -c 'git log $1 --format='''%H''' --not $2 --' -"
+
+    log-list = log --graph --abbrev-commit --decorate --color --date=format:'%d/%m/%Y %H:%M' --pretty=format:'%C(dim green)[%ad]%C(reset) %C(bold blue)[%h]%C(reset) | %C(italic white)%s%C(reset) %C(dim white)<%an> <%ae>%C(reset) %C(bold yellow)%d%C(reset)'
+    log-list-all = !git log-list --all # --branches --remotes --tags
+    log-release = log --abbrev-commit --first-parent --date=format:'%c' --pretty=format:'%C(bold blue)[%h]%Creset %C(italic yellow)%d%Creset ● %C(bold white)%s %Creset%C(dim green)(%cd)%Creset %C(dim cyan)<%an>%Creset%n %+b %n%Cred-------------------------------------------------------------------------------------------------------%Creset'
+    log-withdiff = log -p -m --format=fuller
+
+    today = log --since=midnight --author='Allyson Silva' --oneline
+    week = log --since='1 week ago' --author='Allyson Silva' --oneline
+
+# vim:ft=gitconfig
+# vim: set filetype=gitconfig:
