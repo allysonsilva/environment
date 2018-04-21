@@ -180,7 +180,7 @@
         "list.highlightForeground": "#2979FF",
         "list.inactiveSelectionForeground": "#2979FF",
         "activityBar.background": "#2979FF",
-        "activityBar.foreground": "#ffffff",
+        "activityBar.foreground": "#1E1E1E",
         "activityBarBadge.background": "#D4D4D4",
         "activityBarBadge.foreground": "#1E1E1E",
         "statusBar.background": "#404040",

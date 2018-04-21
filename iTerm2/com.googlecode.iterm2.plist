@@ -280,7 +280,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>358 417 796 473 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>73 162 1234 723 0 0 1440 900 </string>
+	<string>274 169 890 700 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -883,12 +883,16 @@
 			</dict>
 			<key>Selection Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.35294118523597717</real>
+				<real>0.2647705078125</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.27843138575553894</real>
+				<real>0.21230545097727743</real>
 				<key>Red Component</key>
-				<real>0.26666668057441711</real>
+				<real>0.20145845599472523</real>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
@@ -930,6 +934,8 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>27B2A33C-7D38-4D28-A839-627DAA449263</string>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>545616868.70591605</real>
 	<key>OnlyWhenMoreTabs</key>
