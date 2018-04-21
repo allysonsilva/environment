@@ -1,0 +1,321 @@
+{
+    "[javascript]": {
+        "editor.formatOnSave": true
+    },
+    "[vue]": {
+        "editor.formatOnSave": true
+    },
+    "[json]": {
+        "editor.formatOnSave": true
+    },
+    "[html]": {
+        "editor.formatOnSave": true
+    },
+    "[scss]": {
+        "editor.formatOnSave": true
+    },
+    //
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.formatOnSave": false,
+    "editor.fontSize": 15,
+    "editor.letterSpacing": 0,
+    "editor.lineHeight": 35,
+    "editor.fontFamily": "Monaco",
+    "editor.fontWeight": "bold",
+    "editor.smoothScrolling": true,
+    "editor.renderWhitespace": "all",
+    "editor.trimAutoWhitespace": true,
+    "editor.renderLineHighlight": "all",
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": true,
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.renderIndentGuides": true,
+    "editor.minimap.enabled": true,
+    "editor.cursorStyle": "line-thin",
+    "editor.cursorWidth": 5,
+    "editor.tabSize": 4,
+    "editor.autoClosingBrackets": true,
+    "editor.selectionHighlight": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.folding": true,
+    "editor.matchBrackets": true,
+    "editor.useTabStops": true,
+    "editor.dragAndDrop": true,
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "editor.rulers": [50, 72, 80, 120],
+    "editor.wordWrap": "off",
+    "editor.colorDecorators": true,
+    "editor.renderControlCharacters": true,
+    "editor.fontLigatures": true,
+    "editor.tabCompletion": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+    //
+    "workbench.commandPalette.preserveInput": true,
+    "workbench.editor.enablePreview": true,
+    "workbench.editor.showIcons": true,
+    "workbench.editor.showTabs": true,
+    "workbench.fontAliasing": "default",
+    "workbench.iconTheme": "vscode-icons",
+    //
+    "problems.autoReveal": true,
+    "problems.decorations.enabled": true,
+    //
+    "php.suggest.basic": true,
+    "php.validate.enable": true,
+    "php.validate.executablePath": "/usr/local/opt/php/bin/php",
+    "php.validate.run": "onType",
+    //
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.idea": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true,
+        "**/.history": true
+    },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/node_modules/**": true,
+        "**/vendor/**": true,
+        "**/.history": true
+    },
+    "files.associations": {
+        ".php_cs": "php",
+        ".php_cs.dist": "php",
+        "*.blade.php": "blade",
+        "*.php": "php",
+        "*.vue": "vue",
+        "*.js": "javascript",
+        "**/components/*/*.js": "javascriptreact"
+    },
+    "files.hotExit": "onExitAndWindowClose",
+    //
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/vendor": true,
+        "**/bower_components": true,
+        "**/.history": true
+    },
+    //
+    "window.restoreFullscreen": true,
+    "window.openFilesInNewWindow": "on",
+    "window.openFoldersInNewWindow": "on",
+    "window.zoomLevel": 0,
+    "window.title": "${activeEditorMedium}${separator}${rootName} ${dirty}",
+    //
+    "markdown.preview.scrollEditorWithPreview": true,
+    //
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.sortOrder": "default",
+    //
+    "debug.allowBreakpointsEverywhere": true,
+    "debug.inlineValues": false,
+    "debug.openExplorerOnEnd": true,
+    "debug.hideActionBar": false,
+    "debug.openDebug": "openOnFirstSessionStart",
+    "debug.showInStatusBar": "always",
+    //
+    "javascript.format.enable": false, // Disable default JavaScript formatter (For Prettier)
+    // Disabling the default JavaScript formatter allows Prettier to handle our code formatting.
+    "typescript.format.enable": true,
+    "javascript.validate.enable": true, // (For Flow - Disable default JavaScript validation)
+    "typescript.validate.enable": true,
+    "json.format.enable": true,
+    //
+    "html.autoClosingTags": true,
+    "html.format.enable": true,
+    "html.format.wrapLineLength": 120,
+    "html.validate.scripts": true,
+    "html.validate.styles": true,
+    //
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.lineHeight": 1.3,
+    "terminal.integrated.fontFamily": "Monaco",
+    "terminal.integrated.env.osx": {
+        "TERMINAL_VSCODE": "true"
+    },
+    //
+    "git.enabled": true,
+    "git.path": "/usr/local/bin/git",
+    "git.autorefresh": true,
+    "git.autofetch": true,
+    //
+    "emmet.includeLanguages": {
+        "vue": "html",
+        "vue-html": "html",
+        "blade": "html",
+        "laravel-blade": "html"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    //
+    "workbench.colorTheme": "Charcoal Oceanic Next",
+    "workbench.colorCustomizations": {
+        // [One Dark Pro]
+        "tab.activeBackground": "#282c34",
+        "activityBar.background": "#282c34",
+        "editorGroup.background": "#282c34",
+        "sideBar.background": "#282c34"
+    },
+
+    // ==================
+    // Extension Settings
+    // ==================
+
+    // =====
+    // Vetur
+    // =====
+    // "vetur.validation.script": false,
+    // "vetur.validation.style": false,
+    // "vetur.validation.template": false,
+    "vetur.format.defaultFormatter.html": "js-beautify-html",
+    "vetur.format.defaultFormatterOptions": {
+        "js-beautify-html": {
+            // js-beautify-html settings, see https://github.com/vuejs/vetur/blob/master/server/src/modes/template/services/htmlFormat.ts
+            "wrap_attributes": "force-aligned"
+        }
+    },
+
+    // ========
+    // Prettier
+    // ========
+    "prettier.arrowParens": "avoid",
+    "prettier.bracketSpacing": true,
+    "prettier.disableLanguages": [],
+    "prettier.eslintIntegration": true,
+    "prettier.stylelintIntegration": false,
+    "prettier.ignorePath": ".prettierignore",
+    // "prettier.parser": "babylon",
+    "prettier.printWidth": 120,
+    "prettier.proseWrap": "preserve",
+    "prettier.requireConfig": false,
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 4,
+    "prettier.trailingComma": "none",
+    "prettier.useTabs": false,
+
+    // ====
+    // Flow
+    // ====
+    // "flow.enabled": true,
+    // "flow.fileExtensions": [
+        // ".js",
+        // ".mjs",
+        // ".jsx",
+        // ".flow",
+        // ".json"
+    // ],
+    // "flow.stopFlowOnExit": true,
+    // "flow.pathToFlow": "/usr/local/bin/flow",
+    // "flow.pathToFlow": "${workspaceRoot}/node_modules/.bin/flow",
+    // "flow.useNPMPackagedFlow": true,
+    // "flow.showStatus": true,
+    // "flow.runOnEdit": true,
+    // "flow.runOnAllFiles": false,
+
+    // =========
+    // StyleLint
+    // =========
+    // "css.validate": false,
+    // "scss.validate": false,
+    // "stylelint.enable": false,
+    // "stylelint.configOverrides": null,
+    // "stylelint.additionalDocumentSelectors": [
+    //     "vue",
+    //     "javascriptreact"
+    // ],
+
+    // ======
+    // ESLint
+    // ======
+    "eslint.enable": true,
+    "eslint.options": {
+        "extensions": [
+            // List of file extensions to activate eslint
+            ".html",
+            ".js",
+            ".vue",
+            ".jsx"
+        ]
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        {
+            "language": "vue",
+            "autoFix": true // Autofix any fixable errors when linting
+        }
+    ],
+    "eslint.workingDirectories": [],
+    "eslint.packageManager": "npm",
+    "eslint.trace.server": "off",
+    "eslint.run": "onType",
+    "eslint.alwaysShowStatus": false,
+    "eslint.autoFixOnSave": true,
+
+    // =======
+    // VSIcons
+    // =======
+    "vsicons.associations.files": [
+        {
+            "icon": "php2",
+            "extensions": ["php"],
+            "format": "svg"
+        },
+        {
+            "icon": "php3",
+            "extensions": ["artisan"],
+            "filename": true,
+            "format": "svg"
+        }
+    ],
+    "vsicons.associations.folders": [
+        {
+            "icon": "composer",
+            "extensions": ["vendor"],
+            "format": "svg"
+        },
+        {
+            "icon": "storage",
+            "extensions": ["storage"],
+            "format": "png"
+        },
+        {
+            "icon": "console",
+            "extensions": ["Console"],
+            "format": "png"
+        },
+        {
+            "icon": "http",
+            "extensions": ["Http"],
+            "format": "png"
+        },
+        {
+            "icon": "providers",
+            "extensions": ["Providers"],
+            "format": "svg"
+        },
+        {
+            "icon": "exceptions",
+            "extensions": ["Exceptions"],
+            "format": "png"
+        },
+        {
+            "icon": "bootstrap",
+            "extensions": ["bootstrap", "start"],
+            "format": "svg"
+        }
+    ]
+}
