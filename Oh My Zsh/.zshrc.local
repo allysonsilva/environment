@@ -1,0 +1,152 @@
+# ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+# ↓↓↓↓↓↓↓↓↓ USER CONFIGURATION ↓↓↓↓↓↓↓↓↓↓↓↓
+# ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
+export TERM="xterm-256color"
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;35;40'
+
+### Set default editor ###
+if [[ -x $(which code 2> /dev/null) ]]; then
+    export EDITOR='code'
+    export USE_EDITOR=$EDITOR
+    export VISUAL=$EDITOR
+else
+    export EDITOR='vim'
+    export VISUAL=$EDITOR
+fi
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Improved less option
+# export LESS="--tabs=4 --no-init --LONG-PROMPT --ignore-case --quit-if-one-screen --RAW-CONTROL-CHARS"
+
+### Homebrew ###
+export HOMEBREW_INSTALL_BADGE="☕️ ⚡️"
+export HOMEBREW_NO_ANALYTICS=1 # disables statistics that brew collects
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+### NPM ###
+if command -v "npm" >/dev/null 2>&1; then
+    # npm set init.author.email ""
+    # npm set init.author.name "Allyson Silva"
+    # npm set init.license "MIT"
+fi
+
+### XDEBUG ###
+export XDEBUG_CONFIG="idekey=VSCODE"
+
+### Set colors ###
+if [[ $(uname) == "Darwin" ]] ; then
+    # for mac
+    # Colour output on Mac OS
+    export CLICOLOR=1
+    export LSCOLORS=ExFxBxDxCxegedabagacad
+else
+    # for linux
+    export LS_COLORS='no=00:fi=00:di=0;33:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jpg=01;35:*.gif=01;35:*.bmp=01;35:*.pgm=01;35:*.pbm=01;35:*.ppm=01;35:*.tga=01;35:*.png=01;35:*.GIF=01;35:*.JPG=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.mpg=01;37:*.avi=01;37:*.gl=01;37:*.dl=01;37:*.mly=01;37:*.mll=01;37:*.mli=01;37:*.ml=01;37:*.cpp=01;37:*.cc=01;37:*.c=01;37:*.hh=01;37:*.h=01;37:*Makefile=4;32:*.pl=4;32:*.sh=4;32:*.ps=4;34:*.pdf=4;36:*.txt=01;37:*.tex=01;37:*TODO=01;37'
+fi
+
+### EXA is a better ls tool ###
+type exa >/dev/null && alias ls=exa
+
+if which exa >/dev/null 2>&1; then
+    alias ls='exa -laghFG'
+    alias l='ls --git --color=auto'
+    alias la='exa -laa --git'
+    alias ll='exa -l --git'
+else
+    if [ "$(uname -s)" = "Darwin" ]; then
+      alias ls="ls -FG"
+    else
+      alias ls="ls -F --color"
+    fi
+
+    alias l="ls -lAh"
+    alias la="ls -A"
+    alias ll="ls -l"
+fi
+
+# Set editor preference to nvim if available.
+if which nvim &>/dev/null; then
+    alias vim='() { $(whence -p nvim) $@ }'
+else
+    alias vim='() { $(whence -p vim) $@ }'
+fi
+
+# ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+# ↓↓↓↓↓↓↓↓↓ PLUGINS ↓↓↓↓↓↓↓↓↓↓↓↓
+# ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
+### LUNCHY ###
+LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
+    . $LUNCHY_DIR/lunchy-completion.zsh
+fi
+
+### FZF ###
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS='--height 60% --reverse --inline-info --border --exact'
+
+# #####
+# ZPLUG
+# #####
+
+if [ -d "$HOME/.zplug" ]; then
+    # Check if zplug is installed
+    # [ ! -d ~/.zplug ] && git clone https://github.com/zplug/zplug ~/.zplug
+    # curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+
+    source ~/.zplug/init.zsh
+
+    # zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+    # zplug "seebi/dircolors-solarized", ignore:"*", as:plugin
+    # zplug "plugins/httpie", from:oh-my-zsh, if:"which httpie"
+    # zplug carloscuesta/materialshell, use:materialshell, from:github, as:theme
+
+    # Manipuling OSX Preferences
+    # if [[ $OSTYPE = (darwin|freebsd)* ]]; then
+    #     zplug "plugins/osx",      from:oh-my-zsh
+    #     zplug "plugins/brew",     from:oh-my-zsh, if:"which brew"
+    #     zplug "plugins/macports", from:oh-my-zsh, if:"which port"
+    # fi
+
+    zplug "b4b4r07/enhancd",    use:init.sh
+    zplug "plugins/git",        from:oh-my-zsh, if:"which git"
+    zplug "lib/clipboard",      from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+    zplug "stedolan/jq",        from:gh-r, as:command, rename-to:jq
+    zplug "b4b4r07/emoji-cli",  on:"stedolan/jq"
+
+    zplug "zsh-users/zsh-completions",              defer:0
+    zplug "zsh-users/zsh-autosuggestions",          defer:2, on:"zsh-users/zsh-completions"
+    zplug "zsh-users/zsh-syntax-highlighting",      defer:3, on:"zsh-users/zsh-autosuggestions"
+    zplug "zsh-users/zsh-history-substring-search", defer:3, on:"zsh-users/zsh-syntax-highlighting"
+
+    # Load theme file
+    # zplug 'dracula/zsh', as:theme
+
+    zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+
+    # Install plugins if there are plugins that have not been installed
+    if ! zplug check; then
+        printf "Install? [y/N]: "
+        if read -q; then
+            echo; zplug install
+        fi
+    fi
+
+    # source plugins and add commands to the PATH
+    zplug load --verbose
+
+    if zplug check b4b4r07/enhancd; then
+        # setting if enhancd is available
+        # export ENHANCD_FILTER=fzy:fzf-tmux:fzf:peco:percol:gof:pick:icepick:sentaku:selecta
+    fi
+fi

@@ -1,0 +1,90 @@
+# ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+# ↓↓↓↓↓↓↓↓↓ Aliases ↓↓↓↓↓↓↓↓↓↓↓↓
+# ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
+### Nginx ###
+alias nginx.start='sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist'
+alias nginx.stop='sudo launchctl unload /Library/LaunchDaemons/homebrew.mxcl.nginx.plist'
+alias nginx.restart='nginx.stop && nginx.start'
+alias nginx.logs.error='tail -250f /usr/local/var/log/nginx/error.log'
+alias nginx.logs.access='tail -250f /usr/local/var/log/nginx/access.log'
+
+### PHP-FPM ###
+alias php-fpm.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php.plist"
+alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php.plist"
+alias php-fpm.restart='php-fpm.stop && php-fpm.start'
+
+### MySQL ###
+alias mysql.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
+alias mysql.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
+alias mysql.restart='mysql.stop && mysql.start'
+
+### Server ###
+alias servers.start='sudo nginx && php-fpm --fpm-config /usr/local/etc/php/7.2/php-fpm.conf -D && mysql.server start'
+alias servers.stop='sudo bash -c "killall -9 php-fpm && mysql.server stop && nginx -s stop"'
+
+### NPM ###
+alias npm.global="npm list -g --depth=0 2>/dev/null"
+alias npm.local="npm list --depth=0 2>/dev/null"
+
+### Docker ###
+alias d='docker'
+alias dc='docker-compose'
+alias dl='docker ps -l -q' # Get latest container ID
+alias dpa='docker ps -a' # Get process included stop container
+# To get all container names and their IP addresses in just one single command.
+alias dips="docker ps -aq | xargs docker inspect -f '{{ .Id }} - {{.Name}} - {{.NetworkSettings.IPAddress }}'"
+# If you are using docker-compose the command will be this:
+alias dcips="docker ps -aq | xargs docker inspect -f '{{ .Id }} - {{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
+alias drm='docker rm $(docker ps -aq) -f' # Remove all containers (-f force)
+alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)' # Stop and remove all containers
+alias drse='docker rm $(docker ps -q -f status=exited)' # Remove all containers with status=exited
+alias dstop='docker stop $(docker ps -aq)' # Stop all containers
+alias dri='docker rmi $(docker images -q) -f' # Remove all images (-f force)
+alias dcup='docker-compose up --build -d' # Create and start containers (-d Detached mode)
+alias dcdown='docker-compose down --rmi all --volumes' # Stop and remove containers, networks, images, and volumes
+dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; } # Show all alias related docker
+
+### `CAT` with beautiful colors. requires: pip install -U Pygments ###
+alias cpy='pygmentize -O style=paraiso-dark -f console256 -g' # styles ✔︎ [vs, rrt, emacs, native, monokai, paraiso-dark, paraiso-light, fruity]
+
+### Show IPs: ###
+alias localIp="ipconfig getifaddr en0"
+alias externalIp="curl ipecho.net/plain; echo"
+
+# Generic command adaptations.
+alias grep='() { $(whence -p grep) --color=auto $@ }'
+alias egrep='() { $(whence -p egrep) --color=auto $@ }'
+
+### History ###
+alias h='history'
+alias hsi='hs -i'
+alias hg="history | grep history | tail"
+
+### Remove OS X 'junk' files ###
+alias rmds='find . -name ".DS_Store" -depth -exec rm -i {} \;'
+alias rmd_="find . -iname '._*' -exec rm -rf {} \;"
+
+### Show ls -R with readable depth ###
+alias fileTree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
+alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
+
+### Networking ###
+alias netCons='lsof -i'                             # netCons:      Show all open TCP/IP sockets
+alias flushDNS='dscacheutil -flushcache'              # flushDNS:      Flush out the DNS Cache
+alias lsock='sudo /usr/sbin/lsof -i -P'             # lsock:        Display open sockets
+alias lsockU='sudo /usr/sbin/lsof -nP | grep UDP'   # lsockU:       Display only open UDP sockets
+alias lsockT='sudo /usr/sbin/lsof -nP | grep TCP'   # lsockT:       Display only open TCP sockets
+alias ipInfo0='ipconfig getpacket en0'               # ipInfo0:      Get info on connections for en0
+alias ipInfo1='ipconfig getpacket en1'               # ipInfo1:      Get info on connections for en1
+alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listening connections
+
+### Miscellaneous/Several ###
+alias xcode='open -a xcode'
+alias reload='source ~/.zshrc'
+alias allPaths='echo -e ${PATH//:/\\n}'
+alias ttop="top -ocpu -R -F -s 2 -n30"
+alias listHidden='ls -a | egrep "^\."'
+alias pubKey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+alias zshrc="vi ~/.zshrc"
+alias zshrcVSCode="code ~/.zshrc"
