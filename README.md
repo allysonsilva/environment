@@ -14,9 +14,8 @@
 - [**gitrocket**](https://www.npmjs.com/package/gitrocket)
 - [**hypergravity**](https://www.npmjs.com/package/hypergravity)
 - [**space-pull**](https://www.npmjs.com/package/space-pull)
-- [**hyper-materialshell**](https://github.com/carloscuesta/hyper-materialshell)
+- [**hyperterm-panda**](https://www.npmjs.com/package/hyperterm-panda)
 - ~~hyperterm-gruvbox~~
-- ~~hyperterm-panda~~
 - ~~hyperterm-monokai~~
 - ~~hyper-peacock~~
 - ~~hyper-one-dark-vivid~~

@@ -157,9 +157,8 @@ module.exports = {
         'gitrocket',
         'hypergravity',
         'space-pull',
-        'hyper-materialshell'
+        'hyperterm-panda',
         // 'hyperterm-gruvbox',
-        // 'hyperterm-panda',
         // 'hyperterm-monokai',
         // 'hyper-peacock',
         // 'hyper-one-dark-vivid',
