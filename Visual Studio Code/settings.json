@@ -89,6 +89,9 @@
         "**/.DS_Store": true,
         "**/node_modules": true,
         "**/.history": true,
+        "**/._*": true,
+        "**/Icon?": true,
+        "**/Icon": true,
     },
     "files.watcherExclude": {
         "**/.git/objects/**": true,
