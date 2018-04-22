@@ -1,0 +1,16 @@
+######################
+## Disable root logins
+######################
+
+# You should never log in as the root user.
+# By default, every Linux server has “root” as a username, and so hackers try brute force attacks to crack the password and gain access.
+# Disabling logins from the “root” username adds another layer of security, as it stops hackers from simply guessing your user credentials.
+#
+# Instead of logging in as the root user, you’ll need to create another username and use the “sudo” command to execute root level commands.
+# Sudo is a special access right that can be given to authorized users so that they can run administrative commands, and it eliminates the need for root access.
+PermitRootLogin NO
+
+######################
+## Change the SSH port
+######################
+port 1234
