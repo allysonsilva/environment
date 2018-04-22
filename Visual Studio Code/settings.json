@@ -186,7 +186,7 @@
         "activityBar.foreground": "#1E1E1E",
         "activityBarBadge.background": "#D4D4D4",
         "activityBarBadge.foreground": "#1E1E1E",
-        "statusBar.background": "#404040",
+        "statusBar.background": "#591486",
 
         // Border Only
         "titleBar.border": "#0174f8",
