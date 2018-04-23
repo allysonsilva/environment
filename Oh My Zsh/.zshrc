@@ -4,9 +4,9 @@
 if [[ -z "$TERMINAL_VSCODE" && -z "$HYPER_SHELL" ]]; then
     echo
     if [[ $EUID -ne 0 ]]; then
-        echo "\u256D──────────────────\u256E"
-        echo -e "│ \e[38;05;255m\uf120\e[m  \e[38;05;021m\ue608\e[m  \e[38;05;202m\ue73f\e[m  \e[38;05;011m\ue781\e[m  \e[38;05;033m\ue77f\e[m  \e[38;05;124m\ue755\e[m │"
-        echo "\u2570──────────────────\u256F"
+        echo "\u256D─────────────────────\u256E"
+        echo -e "│ \e[38;05;255m\uf120\e[m  \e[38;05;021m\ue608\e[m  \e[38;05;202m\ue73f\e[m  \e[38;05;011m\ue781\e[m  \e[38;05;010m\ufd42\e[m  \e[38;05;033m\ue77f\e[m  \e[38;05;124m\ue755\e[m │"
+        echo "\u2570─────────────────────\u256F"
     fi
 fi
 
