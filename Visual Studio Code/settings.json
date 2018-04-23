@@ -69,6 +69,8 @@
     "workbench.editor.showTabs": true,
     // "workbench.fontAliasing": "antialiased",
     "workbench.iconTheme": "vscode-icons",
+    "workbench.activityBar.visible": true,
+    "workbench.colorTheme": "Panda Syntax",
     //
     "problems.autoReveal": true,
     "problems.decorations.enabled": true,
@@ -492,6 +494,5 @@
     ],
     "local-history.maxDisplay": 20,
     "local-history.path": "",
-    "local-history.saveDelay": 0,
-    "workbench.activityBar.visible": true
+    "local-history.saveDelay": 0
 }
