@@ -111,6 +111,7 @@
     bd = branch -d
     br = branch -r
     bl = !sh -c 'git branch -a | sed -Ee \"s:^\\*? *::\" | sed -Ee \"s:^(remotes/[^/]+)?/::g\" | grep -v \"HEAD -> origin/master\" | sort | uniq'
+    bsort = branch -r --sort=-committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 
     c = commit
     cm = commit -m
