@@ -22,6 +22,7 @@ extensions=( "cjhowe7.laravel-blade" \
 "joshpeng.theme-charcoal-oceanicnext" \
 "octref.vetur" \
 "robertohuertasm.vscode-icons" \
+"ritwickdey.LiveServer" \
 "PeterJausovec.vscode-docker" )
 for extension in ${extensions[@]}
 do

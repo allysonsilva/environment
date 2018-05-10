@@ -90,6 +90,7 @@ if test "$(which code)"; then
     "zhuangtongfa.Material-theme" \
     "wesbos.theme-cobalt2" \
     "xyz.local-history" \
+    "ritwickdey.LiveServer" \
     "PeterJausovec.vscode-docker" )
     for extension in ${extensions[@]}
     do
