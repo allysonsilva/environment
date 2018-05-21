@@ -41,7 +41,8 @@ alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)' # St
 alias drse='docker rm $(docker ps -q -f status=exited)' # Remove all containers with status=exited
 alias dstop='docker stop $(docker ps -aq)' # Stop all containers
 alias dri='docker rmi $(docker images -q) -f' # Remove all images (-f force)
-alias dcup='docker-compose up --build -d' # Create and start containers (-d Detached mode)
+alias dcup='docker-compose up --build -d --remove-orphans' # Create and start containers (-d Detached mode)
+dcupDev() { docker-compose --file "$1" --project-name App up ${@:2} } # UP
 alias dcdown='docker-compose down --rmi all --volumes' # Stop and remove containers, networks, images, and volumes
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; } # Show all alias related docker
 
