@@ -84,6 +84,12 @@ hiddenOff() { defaults write com.apple.Finder AppleShowAllFiles FALSE; }
 chf() { find $1 -type f -exec chmod 0644 {} \; }
 chd() { find $1 -type d -exec chmod 0755 {} \;}
 
+# COMPOSER LINK PHP
+# @example [composer-link ../composer-package]
+composer-link() {
+    composer config repositories.local '{"type": "path", "url": "'$1'"}' --file composer.json
+}
+
 ######
 ## FZF
 ######
