@@ -68,9 +68,9 @@
     "workbench.editor.showIcons": true,
     "workbench.editor.showTabs": true,
     // "workbench.fontAliasing": "antialiased",
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.iconTheme": "material-icon-theme",
     "workbench.activityBar.visible": true,
-    "workbench.colorTheme": "Panda Syntax",
+    "workbench.colorTheme": "Laracasts Contrast (rainglow)",
     //
     "problems.autoReveal": true,
     "problems.decorations.enabled": true,
@@ -133,7 +133,6 @@
     "debug.allowBreakpointsEverywhere": true,
     "debug.inlineValues": false,
     "debug.openExplorerOnEnd": true,
-    "debug.hideActionBar": false,
     "debug.openDebug": "openOnFirstSessionStart",
     "debug.showInStatusBar": "always",
     //
@@ -172,34 +171,37 @@
         "laravel-blade": "html"
     },
     "emmet.triggerExpansionOnTab": true,
-    "workbench.colorCustomizations": {
-        "scrollbarSlider.activeBackground": "#2979FF50",
-        "editorSuggestWidget.highlightForeground": "#2979FF",
-        "editor.selectionBackground": "#0FF3",
-        "textLink.foreground": "#2979FF",
-        "progressBar.background": "#2979FF",
-        "pickerGroup.foreground": "#2979FF",
-        "tab.activeBorder": "#00000000", // Transparent
-        "list.activeSelectionBackground": "#1e1e1ec4",
-        "list.activeSelectionForeground": "#fff",
-        "list.highlightForeground": "#2979FF",
-        "list.inactiveSelectionForeground": "#2979FF",
-        "activityBar.background": "#2979FF",
-        "activityBar.foreground": "#1E1E1E",
-        "activityBarBadge.background": "#D4D4D4",
-        "activityBarBadge.foreground": "#1E1E1E",
-        "statusBar.background": "#591486",
+    // "workbench.colorCustomizations": {
+    //     "scrollbarSlider.activeBackground": "#2979FF50",
+    //     "editorSuggestWidget.highlightForeground": "#2979FF",
+    //     // "editor.selectionBackground": "#0FF3",
+    //     "textLink.foreground": "#2979FF",
+    //     "progressBar.background": "#2979FF",
+    //     "pickerGroup.foreground": "#2979FF",
+    //     "tab.activeBorder": "#00000000", // Transparent
+    //     "list.activeSelectionBackground": "#1e1e1ec4",
+    //     "list.activeSelectionForeground": "#fff",
+    //     "list.highlightForeground": "#2979FF",
+    //     "list.inactiveSelectionForeground": "#2979FF",
+    //     "list.hoverBackground": "#1e1e1ec4",
+    //     "activityBar.background": "#2979FF",
+    //     "activityBar.foreground": "#1E1E1E",
+    //     "activityBarBadge.background": "#D4D4D4",
+    //     "activityBarBadge.foreground": "#1E1E1E",
+    //     "statusBar.background": "#591486",
+    //     "statusBar.foreground": "#FFFFFF",
+    //     "statusBarItem.hoverBackground": "#3b0e58",
 
-        // Border Only
-        "titleBar.border": "#0174f8",
-        "sideBar.border": "#0174f8",
-        "activityBar.border": "#0b1015",
-        "tab.border": "#0174f8",
-        "editorGroupHeader.tabsBorder": "#0174f8",
-        "panel.border": "#0174f8",
-        "statusBar.border": "#0174f8",
-        "terminal.border": "#0174f8"
-    },
+    //     // Border Only
+    //     "titleBar.border": "#0174f8",
+    //     "sideBar.border": "#0174f8",
+    //     "activityBar.border": "#0b1015",
+    //     "tab.border": "#0174f8",
+    //     "editorGroupHeader.tabsBorder": "#0174f8",
+    //     "panel.border": "#0174f8",
+    //     "statusBar.border": "#0174f8",
+    //     "terminal.border": "#0174f8"
+    // },
 
     // ==================
     // Extension Settings
@@ -211,23 +213,26 @@
     "intelephense.completionProvider.backslashPrefix": false,
     "intelephense.debug.enable": true,
     "intelephense.completionProvider.addUseDeclaration": true,
-    "intelephense.formatProvider.enable": true,
-    "intelephense.trace.server": "messages",
+    "intelephense.formatProvider.enable": false,
+    "intelephense.trace.server": "off",
 
     // ==============
     // PHP DocBlocker
     // ==============
     "php-docblocker.useShortNames": true,
     "php-docblocker.gap": true,
+    "php-docblocker.returnGap": true,
     "php-docblocker.qualifyClassNames": true,
 
     // ======================
     // PHP Namespace Resolver
     // ======================
-    "namespaceResolver.exclude": "**/node_modules/**,**/.history/**", // Exclude glob pattern while finding files
+    "namespaceResolver.exclude": "**/.history/**", // Exclude glob pattern while finding files
     "namespaceResolver.showMessageOnStatusBar": false, // Show message on status bar instead of notification box
     "namespaceResolver.autoSort": true, // Auto sort after imports
+    "namespaceResolver.sortOnSave": false, // Auto sort when a file is saved
     "namespaceResolver.sortAlphabetically": false, // Sort imports in alphabetical order instead of line length
+    "namespaceResolver.sortNatural": false, // Sort imports using a 'natural order' algorithm
     "namespaceResolver.leadingSeparator": true, // Expand class with leading namespace separator
 
     // =====
@@ -337,11 +342,8 @@
     // ==============
     // Material Theme
     // ==============
-    "materialTheme.cache.workbench.settings": {
-        "accent": "Blue",
-        "themeColours": "Darker High Contrast",
-        "accentPrevious": "Cyan"
-    },
+    "materialTheme.accent": "Blue",
+    "materialTheme.accentPrevious": "Cyan",
 
     // =========
     // Bookmarks
@@ -494,5 +496,57 @@
     ],
     "local-history.maxDisplay": 20,
     "local-history.path": "",
-    "local-history.saveDelay": 0
+    "local-history.saveDelay": 0,
+
+    // =================
+    // Custom CSS and JS
+    // =================
+    "vscode_custom_css.imports": [
+        "file:///Users/allysonsilva/Development/GitHub/Environment/Visual%20Studio%20Code/custom-workbench-vscode.css"
+    ],
+    "vscode_custom_css.policy": true,
+
+    // =============
+    // Markdown Lint
+    // =============
+    "markdownlint.config": {
+        "default": true,
+        "MD003": {
+            "style": "consistent"
+        },
+        "MD004": {
+            "style": "consistent"
+        },
+        "MD005": true,
+        "MD006": true,
+        "MD007": {
+            "indent": 4
+        },
+        "MD009": {
+            "br_spaces": 2,
+            "list_item_empty_lines": true
+        },
+        "MD010": {
+            "code_blocks": true
+        },
+        "MD012": {
+            "maximum": 1
+        },
+        "MD025": {
+            "level": 1
+        },
+        "MD030": {
+            "ol_multi": 1,
+            "ol_single": 1,
+            "ul_multi": 1,
+            "ul_single": 1
+        },
+        "line-length": false,
+        "no-inline-html": false,
+        "no-emphasis-as-heading": false,
+        "fenced-code-language": false,
+        "no-empty-links": false,
+        "proper-names": false
+    },
+    "markdownlint.run": "onType"
 }
