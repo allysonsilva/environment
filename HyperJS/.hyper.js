@@ -11,7 +11,7 @@ module.exports = {
         updateChannel: 'stable',
 
         // default font size in pixels for all tabs
-        fontSize: 17,
+        fontSize: 24,
 
         // font family with optional fallbacks
         fontFamily:
@@ -122,8 +122,9 @@ module.exports = {
 
         // Plugins Settings
         hyperTabs: {
-            trafficButtons: false,
+            trafficButtons: true,
             border: false,
+            tabIcons: true,
             tabIconsColored: true,
             activityColor: 'salmon',
             closeAlign: 'right',
@@ -152,19 +153,19 @@ module.exports = {
         'hyperborder',
         'hyper-statusline',
         'hyper-tabs-enhanced',
-        'hyper-dark-scrollbar',
         'hypergoogle',
         'gitrocket',
         'hypergravity',
         'space-pull',
-        'hyperterm-panda',
-        // 'hyperterm-gruvbox',
+        'hyperterm-gruvbox'
+        // 'hyper-one-dark',
+        // 'hyper-chesterish',
+        // 'hyper-oceanic-next',
+        // 'hyperterm-panda',
         // 'hyperterm-monokai',
         // 'hyper-peacock',
         // 'hyper-one-dark-vivid',
         // 'hyper-frontend-delight',
-        // 'hyper-snazzy',
-        // 'hyper-chesterish',
         // 'hyper-one-light',
     ],
 
