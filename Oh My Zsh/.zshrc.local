@@ -8,6 +8,10 @@ export LC_ALL="en_US.UTF-8"
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;35;40'
 
+export LD_LIBRARY_PATH=$(brew --prefix openssl)/lib
+export CPATH=$(brew --prefix openssl)/include
+export PKG_CONFIG_PATH=$(brew --prefix openssl)/lib/pkgconfig
+
 ### Set default editor ###
 if [[ -x $(which code 2> /dev/null) ]]; then
     export EDITOR='code'
