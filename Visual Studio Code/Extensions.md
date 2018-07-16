@@ -35,6 +35,14 @@
 - *zhuangtongfa.Material-theme*
 - *wesbos.theme-cobalt2*
 - *xyz.local-history*
+- *ritwickdey.LiveServer*
+- *monokai.theme-monokai-pro-vscode*
+- *pnp.polacode*
+- *be5invis.vscode-custom-css*
+- *daylerees.rainglow*
+- *docsmsft.docs-markdown*
+- *DavidAnson.vscode-markdownlint*
+- *PeterJausovec.vscode-docker*
 
 ----------
 
@@ -91,6 +99,12 @@ if test "$(which code)"; then
     "wesbos.theme-cobalt2" \
     "xyz.local-history" \
     "ritwickdey.LiveServer" \
+    "monokai.theme-monokai-pro-vscode" \
+    "pnp.polacode" \
+    "be5invis.vscode-custom-css" \
+    "daylerees.rainglow" \
+    "docsmsft.docs-markdown" \
+    "DavidAnson.vscode-markdownlint" \
     "PeterJausovec.vscode-docker" )
     for extension in ${extensions[@]}
     do
