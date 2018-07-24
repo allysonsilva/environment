@@ -90,3 +90,69 @@ alias listHidden='ls -a | egrep "^\."'
 alias pubKey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 alias zshrc="vi ~/.zshrc"
 alias zshrcVSCode="code ~/.zshrc"
+
+# Show file and folder permissions as octal
+# Usage: `octal file.txt` or `octal my/path`
+alias octal="stat -f '%A %a %N'"
+
+####
+# GIT
+####
+
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias wip="git add . && git commit -m 'wip'"
+alias nah="git reset --hard && git clean -df"
+
+####
+# COMPOSER
+####
+
+alias c='composer'
+alias cr='composer require'
+alias cda='composer dump-autoload -o'
+alias co='composer outdated --direct'
+alias cu='composer update'
+alias ci='composer install'
+
+alias update-global-composer='cd ~/.composer && composer update'
+alias composer-global-update='update-global-composer'
+
+####
+# PHP
+####
+
+alias test='vendor/bin/phpunit'
+
+t() {
+    if [ -f vendor/bin/phpunit ]; then
+        vendor/bin/phpunit "$@"
+    else
+        phpunit "$@"
+    fi
+}
+
+#######
+# LARAVEL
+#######
+
+artisan() {
+    if [ -f bin/artisan ]; then
+        php bin/artisan "$@"
+    else
+        php artisan "$@"
+    fi
+}
+
+alias pa="php artisan"
+alias serve="php artisan serve"
+alias migrate="php artisan migrate"
+alias refresh="php artisan migrate:refresh"
+alias fresh="artisan migrate:fresh --seed"
+alias refresh-seed="php artisan migrate:refresh --seed"
+alias db-reset="php artisan migrate:reset && php artisan migrate --seed"
+alias tinker="php artisan tinker"
+alias routes="php artisan route:list"
+alias cache-clear='php artisan cache:clear'
+
+# INSTALL
+alias laravel-installer="composer create-project --prefer-dist laravel/laravel $@"
