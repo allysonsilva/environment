@@ -63,6 +63,8 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.snippetSuggestions": "top",
     //
+    "breadcrumbs.enabled": true,
+    //
     "workbench.commandPalette.preserveInput": true,
     "workbench.editor.enablePreview": true,
     "workbench.editor.showIcons": true,
