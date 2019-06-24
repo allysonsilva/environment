@@ -73,3 +73,54 @@ brew remove --force --ignore-dependencies [FORMULA]
 ```bash
 brew audit --strict --online [FORMULA]
 ```
+
+## Desenvolvimento Local
+
+```bash
+xcode-select -p
+xcode-select --install
+brew install pkg-config autoconf automake
+brew install openssl
+ln -s /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib /usr/local/lib/
+ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
+brew install ruby
+brew install python python@2
+pip install --upgrade pip setuptools
+pip3 install --upgrade pip setuptools
+brew install openssh
+brew install openssl@1.1
+brew tap homebrew/services
+brew install git
+brew install diff-so-fancy
+brew install httpie
+brew install wget
+brew install vim
+brew install curl curl-openssl
+brew install libssh2 icu4c libev libevent libyaml libxml2
+brew install tree pv exa fd fzf jq vegeta wrk siege ack ag ripgrep lz4
+brew install php
+pecl install igbinary lzf ds
+pecl install redis
+brew install rabbitmq
+brew install rabbitmq-c
+pecl install amqp
+pecl install mongodb
+pecl install swoole
+pecl install xdebug
+brew install node
+brew install yarn
+brew install kubernetes-cli kubernetes-helm
+brew install redis
+brew install mongodb
+brew install nginx
+brew install dnsmasq
+brew install mysql@5.7
+
+brew services start redis
+brew services start rabbitmq
+brew services start php
+brew services start mongodb
+brew services start nginx
+sudo brew services start dnsmasq
+brew services start mysql@5.7
+```
