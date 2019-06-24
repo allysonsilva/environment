@@ -2,7 +2,7 @@
 // which will not automatically be merged into this file.
 // See https://hyper.is#cfg for all currently supported options.
 
-// $> ln ~/Development/GitHub/Environment/HyperJS/.hyper.js ~/.hyper.js
+// $> ln -sfv ~/Development/GitHub/Environment/HyperJS/.hyper.js ~/.hyper.js
 
 module.exports = {
     config: {
@@ -16,6 +16,12 @@ module.exports = {
         // font family with optional fallbacks
         fontFamily:
             '"Monofur Nerd Font", "Fira Code", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+
+        // default font weight: 'normal' or 'bold'
+        fontWeight: 'normal',
+
+        // font weight for bold characters: 'normal' or 'bold'
+        fontWeightBold: 'bold',
 
         // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
         cursorColor: '#FF443E',
@@ -32,8 +38,11 @@ module.exports = {
         // terminal background color
         backgroundColor: '#252525',
 
+        // terminal selection color
+        selectionColor: 'rgba(51,153,255,0.3)',
+
         // border color (window, tabs)
-        borderColor: '#2979FF',
+        borderColor: '#ff5f77',
 
         // custom css to embed in the main window
         css: '',
@@ -111,6 +120,9 @@ module.exports = {
         // if true, selected text will automatically be copied to the clipboard
         copyOnSelect: false,
 
+        // if `true` (without backticks and without quotes), hyper will be set as the default protocol client for SSH
+        defaultSSHApp: true,
+
         // if true, on right click selected text will be copied or pasted if no
         // selection is present (true by default on Windows)
         // quickEdit: true
@@ -136,10 +148,34 @@ module.exports = {
             borderWidth: '5px'
         },
 
-        gruvboxTheme: {
-            style: 'dark', // or 'light'
-            contrast: 'normal' // or 'soft', 'hard'
-        }
+        opacity: {
+            focus: 0.9,
+            blur: 0.9
+        },
+
+        // @see https://github.com/chabou/hyper-pane
+        paneNavigation: {
+            debug: false,
+            hotkeys: {
+                navigation: {
+                    up: 'ctrl+alt+up',
+                    down: 'ctrl+alt+down',
+                    left: 'ctrl+alt+left',
+                    right: 'ctrl+alt+right'
+                },
+                jump_prefix: 'ctrl+alt', // completed with 1-9 digits
+                permutation_modifier: 'shift', // Added to jump and navigation hotkeys for pane permutation
+                maximize: 'meta+enter'
+            },
+            showIndicators: false, // Show pane number
+            inactivePaneOpacity: 0.5 // Set to 1 to disable inactive panes dimming
+        },
+
+        hyperStatusLine: {
+            dirtyColor: '#FF443E',
+            aheadColor: 'yellow',
+            footerTransparent: false,
+        },
     },
 
     // a list of plugins to fetch and install from npm
@@ -150,14 +186,17 @@ module.exports = {
     //   `project#1.0.1`
     plugins: [
         // 'hyperpower',
+        // 'hyper-opacity',
         'hyperborder',
         'hyper-statusline',
         'hyper-tabs-enhanced',
-        'hypergoogle',
         'gitrocket',
-        'hypergravity',
         'space-pull',
-        'hyperterm-gruvbox'
+        'hyper-pane',
+        // 'hypergoogle',
+        // 'hypergravity',
+        // 'hyperocean',
+        // 'hyper-subliminal-theme',
         // 'hyper-one-dark',
         // 'hyper-chesterish',
         // 'hyper-oceanic-next',
