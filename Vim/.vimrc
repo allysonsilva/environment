@@ -92,6 +92,7 @@ Plug '2072/PHP-Indenting-for-VIm'
   " ++++++++++++++++++++++++++++
 
 Plug '/usr/local/opt/fzf'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " Initialize plugin system
@@ -299,6 +300,10 @@ endif
     set hlsearch                    " highlight search terms | Highlight matches
     set incsearch                   " show search matches as you type | do incremental searching
     set gdefault                    " search/replace 'globally' (on a line) by default | Applies substitutions globally on lines. Append 'g' to invert back.
+
+    " Clear highlighting on escape in normal mode
+    nnoremap <Esc> :noh<return><Esc>
+    nnoremap <Esc>^[ <Esc>^[
 " }}}
 
 " Folds Settings {{{
@@ -330,6 +335,13 @@ endif
     if v:version >= 730
         " set undofile                        " keep a persistent backup file | Enable undo file
         " set undodir=~/.vim/undo,~/tmp,/tmp " undos files
+
+        " Set up persistent undo across all files.
+        " set undofile
+        " if !isdirectory("$HOME/.vim/undodir")
+        "   call mkdir("$HOME/.vim/undodir", "p")
+        " endif
+        " set undodir="$HOME/.vim/undodir"
     endif
 
     " Don't make backups at all
@@ -722,11 +734,28 @@ nnoremap <Leader>a :Ack!<Space>
 " #####################
 
 set updatetime=100
+" highlight SignColumn ctermbg=whatever
+
+if exists('&signcolumn')  " Vim 7.4.2201
+  set signcolumn=yes
+else
+  let g:gitgutter_sign_column_always = 1
+endif
 
 " Ativar realce da linha (Padrão é desativado)
 " :GitGutterLineHighlightsToggle
 
+nmap ]c <Plug>GitGutterNextHunk
+nmap [c <Plug>GitGutterPrevHunk
+
+nmap <Leader>hv <Plug>GitGutterPreviewHunk
+nmap <Leader>ha <Plug>GitGutterStageHunk
+nmap <Leader>hr <Plug>GitGutterUndoHunk
+
+let g:gitgutter_map_keys = 0 " To disable all key mappings
 let g:gitgutter_enabled = 1
+let g:gitgutter_signs = 1
+let g:gitgutter_highlight_lines = 1 " :GitGutterLineHighlightsToggle
 let g:gitgutter_max_signs = 1000
 
 " ###############
