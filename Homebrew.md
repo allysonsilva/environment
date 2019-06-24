@@ -12,15 +12,13 @@ Alguns exemplos ao executar o comando:
 
 ```
 autoconf automake
-icu4c php72 node
-php72 php72-opcache php72-xdebug
+icu4c php node
 ```
 
 Então:
 
 - `automake` tem `autoconf` como sua dependência.
-- `php72` e `node` tem `icu4c` como sua dependência.
-- `php72-opcache` e `php72-xdebug` tem `php72` como sua dependência.
+- `php` e `node` tem `icu4c` como sua dependência.
 
 **Lista todas as fórmulas que tem `[FORMULA]` como sua dependência `Required`**
 
@@ -33,7 +31,7 @@ brew uses --installed --skip-recommended [FORMULA]
 ```bash
 brew uses --installed openssl
 
-# php72
+# php
 # mysql
 # nginx
 # mongodb
