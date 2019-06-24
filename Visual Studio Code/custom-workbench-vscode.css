@@ -1,10 +1,10 @@
-.monaco-tree .monaco-tree-rows > .monaco-tree-row {
+monaco-tree .monaco-tree-rows > .monaco-tree-row {
     min-height: 25px;
 }
 
 .monaco-tree-row.has-children {
     font-weight: 500;
-    margin-bottom: 1px;
+    margin: 8px;
     color: rgba(238, 238, 238, 0.822);
     font-size: 16px;
 }
@@ -13,8 +13,10 @@
     font-weight: 300;
     font-size: 14px;
     color: #bbb;
+    margin: 5px;
 }
 
-.monaco-shell {
+.mac {
     font-family: Dosis;
+    font-size: 15px;
 }

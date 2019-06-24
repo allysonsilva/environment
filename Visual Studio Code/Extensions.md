@@ -4,49 +4,29 @@
 
 ### Extensões
 
-- *CoenraadS.bracket-pair-colorizer*
-- *Equinusocio.vsc-material-theme*
-- *MehediDracula.php-namespace-resolver*
-- *PKief.material-icon-theme*
 - *aaron-bond.better-comments*
-- *akamud.vscode-theme-onelight*
-- *alefragnani.Bookmarks*
-- *anoff.theme-monokai-light*
-- *bmewburn.vscode-intelephense-client*
-- *cjhowe7.laravel-blade*
-- *dbaeumer.vscode-eslint*
+- *CoenraadS.bracket-pair-colorizer*
+- *daylerees.rainglow*
 - *esbenp.prettier-vscode*
+- *bmewburn.vscode-intelephense-client*
 - *felixfbecker.php-debug*
-- *idleberg.icon-fonts*
-- *joelday.docthis*
-- *joshpeng.sublime-babel-vscode*
+- *MehediDracula.php-namespace-resolver*
+- *monokai.theme-monokai-pro-vscode*
+- *ms-azuretools.vscode-docker*
 - *ms-vscode.csharp*
 - *neilbrayfield.php-docblocker*
 - *octref.vetur*
+- *onecentlin.laravel-blade*
 - *onecentlin.laravel5-snippets*
-- *robertohuertasm.vscode-icons*
-- *robinbentley.sass-indented*
+- *PKief.material-icon-theme*
 - *ryannaddy.laravel-artisan*
-- *tinkertrain.theme-panda*
-- *vincaslt.highlight-matching-tag*
+- *vscode-icons-team.vscode-icons*
 - *wayou.vscode-todo-highlight*
-- *wix.vscode-import-cost*
 - *yzhang.markdown-all-in-one*
-- *zhuangtongfa.Material-theme*
-- *wesbos.theme-cobalt2*
-- *xyz.local-history*
-- *ritwickdey.LiveServer*
-- *monokai.theme-monokai-pro-vscode*
-- *pnp.polacode*
-- *be5invis.vscode-custom-css*
-- *daylerees.rainglow*
-- *docsmsft.docs-markdown*
-- *DavidAnson.vscode-markdownlint*
-- *PeterJausovec.vscode-docker*
 
 ----------
 
-**Utilize o script abaixo para instalar todas as extensões via comando [code](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) do VS Code.**
+**Utilize o script abaixo para instalar as extensões via comando [code](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) do VS Code.**
 
 ```bash
 #!/bin/sh
@@ -67,45 +47,25 @@ if test "$(which code)"; then
     ln -sfn "$DOTFILES/Visual Studio Code/snippets" "$VSCODE_USER/User"
 
     # From `code --list-extensions`
-    extensions=( "CoenraadS.bracket-pair-colorizer" \
-    "Equinusocio.vsc-material-theme" \
-    "MehediDracula.php-namespace-resolver" \
-    "PKief.material-icon-theme" \
-    "aaron-bond.better-comments" \
-    "akamud.vscode-theme-onelight" \
-    "alefragnani.Bookmarks" \
-    "anoff.theme-monokai-light" \
-    "bmewburn.vscode-intelephense-client" \
-    "cjhowe7.laravel-blade" \
-    "dbaeumer.vscode-eslint" \
+    extensions=( "aaron-bond.better-comments" \
+    "CoenraadS.bracket-pair-colorizer" \
+    "daylerees.rainglow" \
     "esbenp.prettier-vscode" \
+    "bmewburn.vscode-intelephense-client" \
     "felixfbecker.php-debug" \
-    "idleberg.icon-fonts" \
-    "joelday.docthis" \
-    "joshpeng.sublime-babel-vscode" \
+    "MehediDracula.php-namespace-resolver" \
+    "monokai.theme-monokai-pro-vscode" \
+    "ms-azuretools.vscode-docker" \
     "ms-vscode.csharp" \
     "neilbrayfield.php-docblocker" \
     "octref.vetur" \
+    "onecentlin.laravel-blade" \
     "onecentlin.laravel5-snippets" \
-    "robertohuertasm.vscode-icons" \
-    "robinbentley.sass-indented" \
+    "PKief.material-icon-theme" \
     "ryannaddy.laravel-artisan" \
-    "tinkertrain.theme-panda" \
-    "vincaslt.highlight-matching-tag" \
+    "vscode-icons-team.vscode-icons" \
     "wayou.vscode-todo-highlight" \
-    "wix.vscode-import-cost" \
-    "yzhang.markdown-all-in-one" \
-    "zhuangtongfa.Material-theme" \
-    "wesbos.theme-cobalt2" \
-    "xyz.local-history" \
-    "ritwickdey.LiveServer" \
-    "monokai.theme-monokai-pro-vscode" \
-    "pnp.polacode" \
-    "be5invis.vscode-custom-css" \
-    "daylerees.rainglow" \
-    "docsmsft.docs-markdown" \
-    "DavidAnson.vscode-markdownlint" \
-    "PeterJausovec.vscode-docker" )
+    "yzhang.markdown-all-in-one" )
     for extension in ${extensions[@]}
     do
         echo;
