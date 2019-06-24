@@ -117,20 +117,6 @@ alias ci='composer install'
 alias update-global-composer='cd ~/.composer && composer update'
 alias composer-global-update='update-global-composer'
 
-####
-# PHP
-####
-
-alias test='vendor/bin/phpunit'
-
-t() {
-    if [ -f vendor/bin/phpunit ]; then
-        vendor/bin/phpunit "$@"
-    else
-        phpunit "$@"
-    fi
-}
-
 #######
 # LARAVEL
 #######

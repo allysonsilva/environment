@@ -18,7 +18,7 @@ fi
 DISABLE_AUTO_TITLE="true"
 
 ### PROMPT CUSTOMIZATION ###
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator context dir dir_writable vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator context history dir dir_writable vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status time)
 
 ### FONT ICONS - @see https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#option-2-use-a-programmer-font ###
@@ -48,8 +48,8 @@ POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{blue}┗%f "
 # POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{red}╭"
 # POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{red}╰%{%F{default}%} "
 # OR
-# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{cyan}\u256D\u2500%f"
-# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{cyan}\uF460%F{073}\uF460%F{109}\uF460%f "
+# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{red}\u256D\u2500%f"
+# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{red}\u2570%F{red}\uF460 %F{red}\ue73f%f "
 # @see https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
 # OR [JS+Laravel]
 # POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
@@ -77,6 +77,10 @@ POWERLEVEL9K_STATUS_OK_FOREGROUND="green"
 POWERLEVEL9K_STATUS_ERROR_BACKGROUND="196"
 POWERLEVEL9K_STATUS_ERROR_FOREGROUND="052"
 
+### HISTORY ###
+POWERLEVEL9K_HISTORY_BACKGROUND='000'
+POWERLEVEL9K_HISTORY_FOREGROUND='yellow'
+
 ### GIT ###
 POWERLEVEL9K_SHOW_CHANGESET=true
 POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
@@ -87,8 +91,8 @@ POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND="magenta"
 
 ### USER/CONTEXT ###
 export DEFAULT_USER=$USER
-POWERLEVEL9K_ALWAYS_SHOW_CONTEXT=true
-POWERLEVEL9K_ALWAYS_SHOW_USER=true
+POWERLEVEL9K_ALWAYS_SHOW_CONTEXT=false
+POWERLEVEL9K_ALWAYS_SHOW_USER=false
 
 if [[ -n $SSH_CONNECTION ]]; then
   POWERLEVEL9K_CONTEXT_TEMPLATE="%n@`hostname -f`" # Default(%n@%m|username@hostname) @see http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Login-information
@@ -129,17 +133,21 @@ POWERLEVEL9K_DIR_OMIT_FIRST_CHARACTER=false
 
 POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND="red"
 POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_BACKGROUND="black"
-# POWERLEVEL9K_DIR_HOME_BACKGROUND="black"
-# POWERLEVEL9K_DIR_HOME_FOREGROUND="blue"
-# POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="black"
-# POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="blue"
-# POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="black"
-# POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="blue"
+
+POWERLEVEL9K_DIR_HOME_BACKGROUND='011'
+POWERLEVEL9K_DIR_HOME_FOREGROUND='000'
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='black'
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='blue'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='black'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='050'
 
 ### TIME ###
-POWERLEVEL9K_TIME_FORMAT="%D{%H:%M} \UF017" #  15:20
+POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}" #  15:20
 # POWERLEVEL9K_TIME_FORMAT="%D{%T \uF017}" #  15:20:44
 POWERLEVEL9K_TIME_BACKGROUND="012"
+# # OR
+# POWERLEVEL9K_TIME_BACKGROUND="000"
+# POWERLEVEL9K_TIME_FOREGROUND="008"
 
 ### ZSH-SYNTAX-HIGHLIGHTING ###
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor line)
@@ -196,28 +204,30 @@ if brew ls --versions openssl > /dev/null; then
   export PATH="$(brew --prefix openssl)/bin:$PATH"
 fi
 
-if brew ls --versions openssl@1.1 > /dev/null; then
-  export PATH="$(brew --prefix openssl@1.1)/bin:$PATH"
-fi
+# if brew ls --versions openssl@1.1 > /dev/null; then
+#   export PATH="$(brew --prefix openssl@1.1)/bin:$PATH"
+# fi
 
 if brew ls --versions icu4c > /dev/null; then
   export PATH="$(brew --prefix icu4c)/bin:$PATH"
   export PATH="$(brew --prefix icu4c)/sbin:$PATH"
 fi
 
-if brew ls --versions sphinx-doc > /dev/null; then
-  export PATH="$(brew --prefix sphinx-doc)/bin:$PATH"
-fi
+# if brew ls --versions sphinx-doc > /dev/null; then
+#   export PATH="$(brew --prefix sphinx-doc)/bin:$PATH"
+# fi
 
 if brew ls --versions python > /dev/null; then
   export PATH="$(brew --prefix python)/bin:$PATH"
   export PATH="$(brew --prefix python)/libexec/bin:$PATH"
 fi
 
-[ ! -z "$(brew ls --versions tcl-tk)" ] && export PATH="$(brew --prefix tcl-tk)/bin:$PATH"
-[ ! -z "$(brew ls --versions go)" ] && export PATH="$(brew --prefix go)/libexec/bin:$PATH"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/Cellar/rabbitmq-c/0.9.0/lib/pkgconfig"
+export PATH=$PATH:/usr/local/opt/rabbitmq/sbin
+
+# [ ! -z "$(brew ls --versions go)" ] && export PATH="$(brew --prefix go)/libexec/bin:$PATH"
 [ ! -z "$(brew ls --versions sqlite)" ] && export PATH="$(brew --prefix sqlite)/bin:$PATH"
-[ ! -z "$(brew ls --versions curl)" ] && export PATH="$(brew --prefix curl)/bin:$PATH"
+[ ! -z "$(brew ls --versions curl-openssl)" ] && export PATH="$(brew --prefix curl-openssl)/bin:$PATH"
 [ ! -z "$(brew ls --versions gettext)" ] && export PATH="$(brew --prefix gettext)/bin:$PATH"
 [ ! -z "$(brew ls --versions libxml2)" ] && export PATH="$(brew --prefix libxml2)/bin:$PATH"
 
@@ -225,13 +235,17 @@ export PATH="$(brew --prefix)/bin:/usr/local/sbin:$HOME/.composer/vendor/bin:$PA
 
 [ ! -z "$(brew ls --versions php)" ] && export PATH="$(brew --prefix php)/bin:$PATH"
 
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
 # if [ -e "/Applications/Postgres.app" ]; then
 #   export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin"
 # fi
 
-if [ -e "/Applications/Allyson/Visual Studio Code.app" ]; then
-  export PATH="$PATH:/Applications/Allyson/Visual Studio Code.app/Contents/Resources/app/bin"
-fi
+# if [ -e "/Applications/Visual Studio Code.app" ]; then
+#   export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+# fi
 
 # ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 # ﹅﹅﹅﹅﹅﹅﹅ ZSH ﹅﹅﹅﹅﹅﹅﹅
@@ -262,8 +276,7 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git laravel5 brew npm node composer redis-cli vagrant docker docker-machine docker-compose extract osx z)
-# plugins=(git laravel5 brew npm node composer redis-cli vagrant docker docker-machine docker-compose extract osx z history-substring-search zsh-completions zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git npm node docker docker-compose z httpie)
 
 source $ZSH/oh-my-zsh.sh
 
