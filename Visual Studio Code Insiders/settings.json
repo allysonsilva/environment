@@ -1,20 +1,4 @@
 {
-    "[javascript]": {
-        "editor.formatOnSave": true
-    },
-    "[vue]": {
-        "editor.formatOnSave": true
-    },
-    "[json]": {
-        "editor.formatOnSave": true
-    },
-    "[html]": {
-        "editor.formatOnSave": true
-    },
-    "[scss]": {
-        "editor.formatOnSave": true
-    },
-    //
     "editor.formatOnPaste": true,
     "editor.formatOnType": true,
     "editor.formatOnSave": false,
@@ -35,7 +19,7 @@
     "editor.cursorStyle": "line-thin",
     "editor.cursorWidth": 5,
     "editor.tabSize": 4,
-    "editor.autoClosingBrackets": true,
+    "editor.autoClosingBrackets": "always",
     "editor.selectionHighlight": true,
     "editor.cursorBlinking": "smooth",
     "editor.folding": true,
@@ -47,24 +31,37 @@
     },
     "editor.rulers": [50, 72, 80, 120],
     "editor.wordWrap": "off",
+    "editor.wordWrapColumn": 72,
     "editor.colorDecorators": true,
     "editor.renderControlCharacters": true,
     "editor.fontLigatures": true,
-    "editor.tabCompletion": true,
+    "editor.tabCompletion": "on",
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.snippetSuggestions": "top",
+    //
+    "breadcrumbs.enabled": true,
+    "breadcrumbs.symbolSortOrder": "position",
     //
     "workbench.commandPalette.preserveInput": true,
     "workbench.editor.enablePreview": true,
     "workbench.editor.showIcons": true,
     "workbench.editor.showTabs": true,
-    "workbench.fontAliasing": "default",
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.labelFormat": "default",
+    "workbench.fontAliasing": "antialiased",
+    "workbench.activityBar.visible": true,
+    "workbench.editor.tabSizing": "fit",
+    "workbench.list.multiSelectModifier": "ctrlCmd",
+    "workbench.list.horizontalScrolling": true,
+    "workbench.settings.editor": "ui",
+    "workbench.tree.indent": 8,
     "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "Flat UI Custom",
     //
     "problems.autoReveal": true,
     "problems.decorations.enabled": true,
     //
-    "php.suggest.basic": true,
+    "php.suggest.basic": false,
     "php.validate.enable": true,
     "php.validate.executablePath": "/usr/local/opt/php/bin/php",
     "php.validate.run": "onType",
@@ -79,13 +76,16 @@
         "**/.hg": true,
         "**/.DS_Store": true,
         "**/node_modules": true,
-        "**/.history": true
+        "**/.history": true,
+        "**/._*": true,
+        "**/Icon?": true,
+        "**/Icon": true
     },
     "files.watcherExclude": {
         "**/.git/objects/**": true,
-        "**/node_modules/**": true,
-        "**/vendor/**": true,
-        "**/.history": true
+        "**/node_modules/*/**": true,
+        "**/vendor/*/**": true,
+        "**/.history/*/**": true
     },
     "files.associations": {
         ".php_cs": "php",
@@ -93,39 +93,50 @@
         "*.blade.php": "blade",
         "*.php": "php",
         "*.vue": "vue",
-        "*.js": "javascript",
-        "**/components/*/*.js": "javascriptreact"
+        "*.js": "javascript"
     },
     "files.hotExit": "onExitAndWindowClose",
     //
     "search.exclude": {
         "**/node_modules": true,
-        "**/vendor": true,
         "**/bower_components": true,
         "**/.history": true
     },
+    "search.quickOpen.includeSymbols": true,
+    "search.showLineNumbers": true,
     //
+    "window.newWindowDimensions": "inherit",
     "window.restoreFullscreen": true,
+    "window.restoreWindows": "all",
     "window.openFilesInNewWindow": "on",
     "window.openFoldersInNewWindow": "on",
     "window.zoomLevel": 0,
-    "window.title": "${activeEditorMedium}${separator}${rootName} ${dirty}",
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
     //
     "markdown.preview.scrollEditorWithPreview": true,
     //
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.sortOrder": "default",
+    "explorer.openEditors.visible": 0,
     //
     "debug.allowBreakpointsEverywhere": true,
+    "debug.console.fontFamily": "Monaco",
+    "debug.console.fontSize": 15,
+    "debug.console.lineHeight": 1.3,
+    "debug.enableAllHovers": false,
     "debug.inlineValues": false,
     "debug.openExplorerOnEnd": true,
-    "debug.hideActionBar": false,
+    "debug.toolBarLocation": "docked",
     "debug.openDebug": "openOnFirstSessionStart",
     "debug.showInStatusBar": "always",
     //
-    "javascript.format.enable": false, // Disable default JavaScript formatter (For Prettier)
-    // Disabling the default JavaScript formatter allows Prettier to handle our code formatting.
+    "extensions.autoCheckUpdates": true,
+    "extensions.autoUpdate": false,
+    "extensions.ignoreRecommendations": true,
+    "extensions.showRecommendationsOnlyOnDemand": true,
+    //
+    "javascript.format.enable": true,
     "typescript.format.enable": true,
     "javascript.validate.enable": true, // (For Flow - Disable default JavaScript validation)
     "typescript.validate.enable": true,
@@ -133,6 +144,7 @@
     //
     "html.autoClosingTags": true,
     "html.format.enable": true,
+    "html.format.indentInnerHtml": true,
     "html.format.wrapLineLength": 120,
     "html.validate.scripts": true,
     "html.validate.styles": true,
@@ -141,6 +153,7 @@
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.fontSize": 15,
     "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.scrollback": 10000,
     "terminal.integrated.lineHeight": 1.3,
     "terminal.integrated.fontFamily": "Monaco",
     "terminal.integrated.env.osx": {
@@ -159,15 +172,6 @@
         "laravel-blade": "html"
     },
     "emmet.triggerExpansionOnTab": true,
-    //
-    "workbench.colorTheme": "Charcoal Oceanic Next",
-    "workbench.colorCustomizations": {
-        // [One Dark Pro]
-        "tab.activeBackground": "#282c34",
-        "activityBar.background": "#282c34",
-        "editorGroup.background": "#282c34",
-        "sideBar.background": "#282c34"
-    },
 
     // ==================
     // Extension Settings
@@ -176,10 +180,16 @@
     // =====
     // Vetur
     // =====
-    // "vetur.validation.script": false,
-    // "vetur.validation.style": false,
-    // "vetur.validation.template": false,
+    "vetur.validation.script": true,
+    "vetur.validation.style": true,
+    "vetur.validation.template": true,
+    "vetur.format.enable": true,
+    "vetur.format.scriptInitialIndent": true,
+    "vetur.format.styleInitialIndent": true,
+    "vetur.format.defaultFormatter.js": "prettier-eslint",
     "vetur.format.defaultFormatter.html": "js-beautify-html",
+    "vetur.format.defaultFormatter.css": "prettier",
+    "vetur.format.defaultFormatter.scss": "prettier",
     "vetur.format.defaultFormatterOptions": {
         "js-beautify-html": {
             // js-beautify-html settings, see https://github.com/vuejs/vetur/blob/master/server/src/modes/template/services/htmlFormat.ts
@@ -187,135 +197,27 @@
         }
     },
 
-    // ========
-    // Prettier
-    // ========
-    "prettier.arrowParens": "avoid",
-    "prettier.bracketSpacing": true,
-    "prettier.disableLanguages": [],
-    "prettier.eslintIntegration": true,
-    "prettier.stylelintIntegration": false,
-    "prettier.ignorePath": ".prettierignore",
-    // "prettier.parser": "babylon",
-    "prettier.printWidth": 120,
-    "prettier.proseWrap": "preserve",
-    "prettier.requireConfig": false,
-    "prettier.semi": false,
-    "prettier.singleQuote": true,
-    "prettier.tabWidth": 4,
-    "prettier.trailingComma": "none",
-    "prettier.useTabs": false,
-
-    // ====
-    // Flow
-    // ====
-    // "flow.enabled": true,
-    // "flow.fileExtensions": [
-        // ".js",
-        // ".mjs",
-        // ".jsx",
-        // ".flow",
-        // ".json"
-    // ],
-    // "flow.stopFlowOnExit": true,
-    // "flow.pathToFlow": "/usr/local/bin/flow",
-    // "flow.pathToFlow": "${workspaceRoot}/node_modules/.bin/flow",
-    // "flow.useNPMPackagedFlow": true,
-    // "flow.showStatus": true,
-    // "flow.runOnEdit": true,
-    // "flow.runOnAllFiles": false,
-
-    // =========
-    // StyleLint
-    // =========
-    // "css.validate": false,
-    // "scss.validate": false,
-    // "stylelint.enable": false,
-    // "stylelint.configOverrides": null,
-    // "stylelint.additionalDocumentSelectors": [
-    //     "vue",
-    //     "javascriptreact"
-    // ],
-
-    // ======
-    // ESLint
-    // ======
-    "eslint.enable": true,
-    "eslint.options": {
-        "extensions": [
-            // List of file extensions to activate eslint
-            ".html",
-            ".js",
-            ".vue",
-            ".jsx"
-        ]
-    },
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        {
-            "language": "vue",
-            "autoFix": true // Autofix any fixable errors when linting
-        }
+    // ================
+    // PHP Intelephense
+    // ================
+    "intelephense.completion.fullyQualifyGlobalConstantsAndFunctions": false,
+    "intelephense.completion.insertUseDeclaration": true,
+    "intelephense.files.associations": [
+        "*.php",
+        "*.blade.php"
     ],
-    "eslint.workingDirectories": [],
-    "eslint.packageManager": "npm",
-    "eslint.trace.server": "off",
-    "eslint.run": "onType",
-    "eslint.alwaysShowStatus": false,
-    "eslint.autoFixOnSave": true,
-
-    // =======
-    // VSIcons
-    // =======
-    "vsicons.associations.files": [
-        {
-            "icon": "php2",
-            "extensions": ["php"],
-            "format": "svg"
-        },
-        {
-            "icon": "php3",
-            "extensions": ["artisan"],
-            "filename": true,
-            "format": "svg"
-        }
+    "intelephense.files.exclude": [
+        "**/.git/**",
+        "**/.svn/**",
+        "**/.hg/**",
+        "**/CVS/**",
+        "**/.DS_Store/**",
+        "**/.history/**",
+        "**/node_modules/**",
+        "**/bower_components/**",
+        "**/vendor/**/{Test,test,Tests,tests}/**"
     ],
-    "vsicons.associations.folders": [
-        {
-            "icon": "composer",
-            "extensions": ["vendor"],
-            "format": "svg"
-        },
-        {
-            "icon": "storage",
-            "extensions": ["storage"],
-            "format": "png"
-        },
-        {
-            "icon": "console",
-            "extensions": ["Console"],
-            "format": "png"
-        },
-        {
-            "icon": "http",
-            "extensions": ["Http"],
-            "format": "png"
-        },
-        {
-            "icon": "providers",
-            "extensions": ["Providers"],
-            "format": "svg"
-        },
-        {
-            "icon": "exceptions",
-            "extensions": ["Exceptions"],
-            "format": "png"
-        },
-        {
-            "icon": "bootstrap",
-            "extensions": ["bootstrap", "start"],
-            "format": "svg"
-        }
-    ]
+    "intelephense.format.enable": true,
+    "intelephense.trace.server": "messages",
+    "intelephense.files.maxSize": 1000000
 }

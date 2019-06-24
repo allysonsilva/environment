@@ -4,26 +4,20 @@
 
 ### Extensões
 
-- *cjhowe7.laravel-blade*
-- *dbaeumer.vscode-eslint*
-- *esbenp.prettier-vscode*
-- *joshpeng.sublime-babel-vscode*
-- *joshpeng.theme-charcoal-oceanicnext*
+- *vscode-icons-team.vscode-icons*
+- *muhammadsammy.flat-ui-dark*
 - *octref.vetur*
-- *robertohuertasm.vscode-icons*
+- *bmewburn.vscode-intelephense-client*
+- *ms-azuretools.vscode-docker*
 
-**_Utilize o script abaixo para instalar todas as extensões._**
+**_Utilize o script abaixo para instalar as extensões._**
 
 ```bash
-extensions=( "cjhowe7.laravel-blade" \
-"dbaeumer.vscode-eslint" \
-"esbenp.prettier-vscode" \
-"joshpeng.sublime-babel-vscode" \
-"joshpeng.theme-charcoal-oceanicnext" \
+extensions=( "vscode-icons-team.vscode-icons" \
+"muhammadsammy.flat-ui-dark" \
 "octref.vetur" \
-"robertohuertasm.vscode-icons" \
-"ritwickdey.LiveServer" \
-"PeterJausovec.vscode-docker" )
+"bmewburn.vscode-intelephense-client" \
+"ms-azuretools.vscode-docker" )
 for extension in ${extensions[@]}
 do
     echo;
