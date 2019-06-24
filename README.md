@@ -307,7 +307,7 @@ $ chmod 600 ~/.ssh/authorized_keys
 
 ## SERVER
 
-**Initial Setting**
+**Configurações iniciais para criar um novo servidor:**
 
 ```bash
 apt-get update && apt-get -y upgrade
@@ -321,6 +321,8 @@ dpkg-reconfigure tzdata
 ```
 
 ### NGINX
+
+Utilize os comandos abaixo para instalar o **NGINX** no servidor:
 
 ```bash
 echo -e "deb http://nginx.org/packages/mainline/ubuntu/ $(lsb_release -cs) nginx \ndeb-src http://nginx.org/packages/mainline/ubuntu/ $(lsb_release -cs) nginx" | tee /etc/apt/sources.list.d/nginx.list
@@ -433,15 +435,6 @@ echo "extension=xdebug.so" | tee -a /etc/php/7.2/mods-available/xdebug.ini
 # ln -s /etc/php/7.2/mods-available/xdebug.ini /etc/php/7.2/fpm/conf.d/20-xdebug.ini
 ```
 
-**Disable Xdebug (Ubuntu)**
-`sudo phpdismod xdebug`
-
-**Enable xdebug back (Ubuntu)**
-`sudo phpenmod xdebug`
-
-**Disable xdebug for commandline only (Ubuntu)**
-`sudo phpdismod -s cli xdebug`
-
 ### Composer
 
 ```bash
@@ -477,10 +470,10 @@ mysql_secure_installation
 | `/etc/my.cnf`         | *Global options*                                        |
 | `/etc/mysql/my.cnf`   | *Global options*                                        |
 | `SYSCONFDIR/my.cnf`   | *Global options*                                        |
-| `$MYSQL_HOME/my.cnf`  | *Server-specific options (server only)*                  |
-| `defaults-extra-file`  | *The file specified with --defaults-extra-file, if any*    |
-| `~/.my.cnf`           | *User-specific options*                                  |
-| `~/.mylogin.cnf`      | *User-specific login path options (clients only)*        |
+| `$MYSQL_HOME/my.cnf`  | *Server-specific options (server only)*                 |
+| `defaults-extra-file` | *The file specified with --defaults-extra-file, if any* |
+| `~/.my.cnf`           | *User-specific options*                                 |
+| `~/.mylogin.cnf`      | *User-specific login path options (clients only)*       |
 
 ### Node.js
 
@@ -611,6 +604,54 @@ systemctl status mongod
 
 ```bash
 mongo -u AdminSammy -p --authenticationDatabase admin --host IP_of_Client --port 27017
+```
+
+### Docker
+
+Para melhor orientação sobre como instalar o Docker no LINUX o melhor conteúdo sobre se encontra na própria página do docker(https://docs.docker.com/install/linux/docker-ce/ubuntu/).
+
+**Alguns comandos básicos do Docker**
+
+_Informações do Docker:_
+
+```bash
+docker info ou docker version
+```
+
+_Listar todas as imagens disponíveis no seu repositório local(máquina em que o Docker está instalado):_
+
+```bash
+docker images
+```
+
+_Baixar uma imagem de um servidor DOCKER:_
+
+```bash
+docker pull [nome-da-image:tag?]
+```
+
+_Verificar o estado dos contêineres em execução:_
+
+```bash
+docker ps
+```
+
+_Para STOP determinado container:_
+
+```bash
+docker stop <id-ou-nome-container>
+```
+
+_Para START determinado container:_
+
+```bash
+docker start <id-ou-nome-container>
+```
+
+_Para entrar dentro de um container:_
+
+```
+docker exec -it <id-ou-nome-container> bash
 ```
 
 ## License
