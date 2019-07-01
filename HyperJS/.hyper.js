@@ -4,6 +4,10 @@
 
 // $> ln -sfv ~/Development/GitHub/Environment/HyperJS/.hyper.js ~/.hyper.js
 
+// ! FOR BLOCK AUTOMATIC UPGRADE VERSION HYPERJS
+// 127.0.0.1  releases.hyper.is
+// 127.0.0.1  releases-canary.hyper.is
+
 module.exports = {
     config: {
         // Choose either "stable" for receiving highly polished,
