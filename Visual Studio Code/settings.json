@@ -64,7 +64,7 @@
     "workbench.settings.editor": "ui",
     "workbench.tree.indent": 8,
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+    "workbench.colorTheme": "Laracasts Contrast (rainglow)",
                             // Dare Contrast (rainglow) |
                             // Bold Light (rainglow)
                             // Monokai Pro
@@ -245,7 +245,7 @@
     "namespaceResolver.exclude": "**/.history/**", // Exclude glob pattern while finding files
     "namespaceResolver.showMessageOnStatusBar": false, // Show message on status bar instead of notification box
     "namespaceResolver.autoSort": true, // Auto sort after imports
-    "namespaceResolver.sortOnSave": true, // Auto sort when a file is saved
+    "namespaceResolver.sortOnSave": false, // Auto sort when a file is saved
     "namespaceResolver.leadingSeparator": true, // Expand class with leading namespace separator
 
     // ======================
