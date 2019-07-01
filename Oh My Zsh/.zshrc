@@ -193,10 +193,9 @@ fi
 
 ### GO ###
 export GOPATH=$HOME/.golang
-# export GOPATH=$HOME/go
-# export GOROOT=/usr/local/opt/go/libexec
-# export PATH=$PATH:$GOPATH/bin
-# export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOPATH/bin
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOROOT/bin
 
 ### PATHs ###
 
@@ -213,9 +212,9 @@ if brew ls --versions icu4c > /dev/null; then
   export PATH="$(brew --prefix icu4c)/sbin:$PATH"
 fi
 
-# if brew ls --versions sphinx-doc > /dev/null; then
-#   export PATH="$(brew --prefix sphinx-doc)/bin:$PATH"
-# fi
+if brew ls --versions gnu-sed > /dev/null; then
+  export PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"
+fi
 
 if brew ls --versions python > /dev/null; then
   export PATH="$(brew --prefix python)/bin:$PATH"
@@ -238,10 +237,6 @@ export PATH="$(brew --prefix)/bin:/usr/local/sbin:$HOME/.composer/vendor/bin:$PA
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 export PATH="/usr/local/opt/ruby/bin:$PATH"
-
-# if [ -e "/Applications/Postgres.app" ]; then
-#   export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin"
-# fi
 
 # if [ -e "/Applications/Visual Studio Code.app" ]; then
 #   export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
@@ -276,7 +271,7 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git npm node docker docker-compose z httpie)
+plugins=(git npm node laravel5 docker docker-compose z httpie)
 
 source $ZSH/oh-my-zsh.sh
 
