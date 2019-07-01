@@ -98,7 +98,7 @@ brew install libssh2 icu4c libev libevent libyaml libxml2
 brew install tree pv exa fd fzf jq vegeta wrk siege ack ag ripgrep lz4
 brew install php
 pecl install igbinary lzf ds
-pecl install redis
+yes | pecl install redis
 brew install rabbitmq
 brew install rabbitmq-c
 pecl install amqp
@@ -113,6 +113,8 @@ brew install mongodb
 brew install nginx
 brew install dnsmasq
 brew install mysql@5.7
+brew install gnu-sed
+brew install go
 
 brew services start redis
 brew services start rabbitmq
