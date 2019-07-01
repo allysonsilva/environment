@@ -56,7 +56,7 @@
     "workbench.settings.editor": "ui",
     "workbench.tree.indent": 8,
     "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "Flat UI Custom",
+    "workbench.colorTheme": "Panda Syntax",
     //
     "problems.autoReveal": true,
     "problems.decorations.enabled": true,

@@ -5,7 +5,7 @@
 ### Extensões
 
 - *vscode-icons-team.vscode-icons*
-- *muhammadsammy.flat-ui-dark*
+- *tinkertrain.theme-panda*
 - *octref.vetur*
 - *bmewburn.vscode-intelephense-client*
 - *ms-azuretools.vscode-docker*
@@ -14,7 +14,7 @@
 
 ```bash
 extensions=( "vscode-icons-team.vscode-icons" \
-"muhammadsammy.flat-ui-dark" \
+"tinkertrain.theme-panda" \
 "octref.vetur" \
 "bmewburn.vscode-intelephense-client" \
 "ms-azuretools.vscode-docker" )
