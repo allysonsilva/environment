@@ -19,7 +19,7 @@ module.exports = {
 
         // font family with optional fallbacks
         fontFamily:
-            '"Monofur Nerd Font", "Fira Code", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+            '"Monofur Nerd Font", "FuraCode Nerd Font", "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
         // default font weight: 'normal' or 'bold'
         fontWeight: 'normal',
@@ -95,7 +95,7 @@ module.exports = {
             lightWhite: '#F5F5F5'
         },
 
-        // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
+        // the shell to run when spawning a new session (i.e. /opt/homebrew/bin/fish)
         // if left empty, your system's login shell will be used by default
         //
         // Windows
@@ -107,7 +107,7 @@ module.exports = {
         //
         // Powershell on Windows
         // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-        shell: '',
+        shell: '/opt/homebrew/bin/zsh',
 
         // for setting shell arguments (i.e. for using interactive shellArgs: ['-i'])
         // by default ['--login'] will be used
@@ -175,11 +175,6 @@ module.exports = {
             inactivePaneOpacity: 0.5 // Set to 1 to disable inactive panes dimming
         },
 
-        hyperStatusLine: {
-            dirtyColor: '#FF443E',
-            aheadColor: 'yellow',
-            footerTransparent: false,
-        },
     },
 
     // a list of plugins to fetch and install from npm
@@ -192,13 +187,10 @@ module.exports = {
         // 'hyperpower',
         // 'hyper-opacity',
         'hyperborder',
-        'hyper-statusline',
         'hyper-tabs-enhanced',
         'gitrocket',
         'space-pull',
         'hyper-pane',
-        // 'hypergoogle',
-        // 'hypergravity',
         // 'hyperocean',
         // 'hyper-subliminal-theme',
         // 'hyper-one-dark',

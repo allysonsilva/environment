@@ -1,6 +1,6 @@
 [user]
-    name = Allyson Silva
-    email =
+	name = Allyson Silva
+	email = 
 
 [core]
     editor = code --wait
@@ -88,6 +88,12 @@
 
 [branch]
     autosetuprebase = always
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 
 [alias]
     i = !git init && git add . && git commit -m \"Initial Commit\"

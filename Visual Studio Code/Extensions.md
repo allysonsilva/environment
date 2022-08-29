@@ -8,21 +8,19 @@
 - *CoenraadS.bracket-pair-colorizer*
 - *daylerees.rainglow*
 - *esbenp.prettier-vscode*
-- *bmewburn.vscode-intelephense-client*
-- *felixfbecker.php-debug*
-- *MehediDracula.php-namespace-resolver*
 - *monokai.theme-monokai-pro-vscode*
-- *ms-azuretools.vscode-docker*
-- *ms-vscode.csharp*
-- *neilbrayfield.php-docblocker*
-- *octref.vetur*
-- *onecentlin.laravel-blade*
-- *onecentlin.laravel5-snippets*
 - *PKief.material-icon-theme*
-- *ryannaddy.laravel-artisan*
 - *vscode-icons-team.vscode-icons*
 - *wayou.vscode-todo-highlight*
 - *yzhang.markdown-all-in-one*
+- *bmewburn.vscode-intelephense-client*
+- *felixfbecker.php-debug*
+- *MehediDracula.php-namespace-resolver*
+- *neilbrayfield.php-docblocker*
+- *onecentlin.laravel-blade*
+- *onecentlin.laravel5-snippets*
+- *ryannaddy.laravel-artisan*
+- *golang.go*
 
 ----------
 
@@ -51,21 +49,19 @@ if test "$(which code)"; then
     "CoenraadS.bracket-pair-colorizer" \
     "daylerees.rainglow" \
     "esbenp.prettier-vscode" \
+    "monokai.theme-monokai-pro-vscode" \
+    "PKief.material-icon-theme" \
+    "vscode-icons-team.vscode-icons" \
+    "wayou.vscode-todo-highlight" \
+    "yzhang.markdown-all-in-one" \
     "bmewburn.vscode-intelephense-client" \
     "felixfbecker.php-debug" \
     "MehediDracula.php-namespace-resolver" \
-    "monokai.theme-monokai-pro-vscode" \
-    "ms-azuretools.vscode-docker" \
-    "ms-vscode.csharp" \
     "neilbrayfield.php-docblocker" \
-    "octref.vetur" \
     "onecentlin.laravel-blade" \
     "onecentlin.laravel5-snippets" \
-    "PKief.material-icon-theme" \
     "ryannaddy.laravel-artisan" \
-    "vscode-icons-team.vscode-icons" \
-    "wayou.vscode-todo-highlight" \
-    "yzhang.markdown-all-in-one" )
+    "golang.go" )
     for extension in ${extensions[@]}
     do
         echo;

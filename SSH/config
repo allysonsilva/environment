@@ -1,6 +1,12 @@
 Host *
-    # Keeping Connections Alive to Avoid Timeout
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+    PreferredAuthentications publickey
+    Compression yes
+    TCPKeepAlive yes
     ServerAliveInterval 60
+    ServerAliveCountMax 60
+    LogLevel INFO
     # Multiplexing SSH Over a Single TCP Connection
     # ssh -S none username@remote_host
     ControlMaster auto
@@ -8,22 +14,17 @@ Host *
     ControlPath ~/.ssh/multiplex/%r@%h:%p
     ControlPersist 1
 
-# Bitbucket AllysonSilva
-# git clone git@BitbucketAllysonSilva:yourPersonalAccount/Project.git
-Host BitbucketAllysonSilva bitbucket.org
+# git clone git@MyBitbucket:yourPersonalAccount/Project.git
+Host MyBitbucket bitbucket.org
     HostName bitbucket.org
-    User AllysonSilva
-    IdentityFile ~/.ssh/id_rsa_Bitbucket_AllysonSilva
+    User git
+    IdentityFile ~/.ssh/id_rsa_Bitbucket
     AddKeysToAgent yes
     IgnoreUnknown UseKeychain
     UseKeychain yes
 
-# GitHub AllysonSilva
-# git clone git@GitHubAllysonSilva:yourPersonalAccount/Project.git
-Host GitHubAllysonSilva github.com
+# git clone git@MyGitHub:yourPersonalAccount/Project.git
+Host MyGitHub github.com
     HostName github.com
-    User AllysonSilva
-    IdentityFile ~/.ssh/id_rsa_GitHub_AllysonSilva
-    AddKeysToAgent yes
-    IgnoreUnknown UseKeychain
-    UseKeychain yes
+    User git
+    IdentityFile ~/.ssh/id_rsa_GitHub

@@ -1,16 +1,33 @@
-######################
-## Disable root logins
-######################
-
-# You should never log in as the root user.
-# By default, every Linux server has “root” as a username, and so hackers try brute force attacks to crack the password and gain access.
-# Disabling logins from the “root” username adds another layer of security, as it stops hackers from simply guessing your user credentials.
 #
-# Instead of logging in as the root user, you’ll need to create another username and use the “sudo” command to execute root level commands.
-# Sudo is a special access right that can be given to authorized users so that they can run administrative commands, and it eliminates the need for root access.
-PermitRootLogin NO
+Include /etc/ssh/sshd_config.d/*.conf
 
-######################
-## Change the SSH port
-######################
-port 1234
+port YOUR_PORT
+
+PermitRootLogin no
+PasswordAuthentication no
+UsePAM no
+PermitEmptyPasswords no
+
+PubkeyAuthentication yes
+AuthenticationMethods publickey
+
+MaxSessions 3
+
+ChallengeResponseAuthentication no
+KerberosAuthentication no
+GSSAPIAuthentication no
+
+X11Forwarding yes
+PrintMotd no
+PermitUserEnvironment no
+AllowTcpForwarding no
+PermitTunnel no
+Banner none
+
+AllowUsers YOUR_USER
+
+# Allow client to pass locale environment variables
+AcceptEnv LANG LC_*
+
+# Override default of no subsystems
+Subsystem       sftp    /usr/lib/openssh/sftp-server

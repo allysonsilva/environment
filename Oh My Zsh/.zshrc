@@ -1,11 +1,11 @@
 # https://wiki.archlinux.org/index.php/zsh
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/templates/zshrc.zsh-template
 
-if [[ -z "$TERMINAL_VSCODE" && -z "$HYPER_SHELL" ]]; then
+if [[ -z "$TERMINAL_VSCODE" && -z "$HYPER_SHELL" && -z "$TERMINALIZER" ]]; then
     echo
     if [[ $EUID -ne 0 ]]; then
         echo "\u256D─────────────────────\u256E"
-        echo -e "│ \e[38;05;255m\uf120\e[m  \e[38;05;021m\ue608\e[m  \e[38;05;202m\ue73f\e[m  \e[38;05;011m\ue781\e[m  \e[38;05;010m\ufd42\e[m  \e[38;05;033m\ue77f\e[m  \e[38;05;124m\ue755\e[m │"
+        echo -e "│ \e[38;05;014m\ue724\e[m  \e[38;05;021m\ue608\e[m  \e[38;05;202m\ue73f\e[m  \e[38;05;011m\uf17c\e[m  \e[38;05;010m\ue706\e[m  \e[38;05;033m\uf308\e[m  \e[38;05;124m\uf233\e[m │"
         echo "\u2570─────────────────────\u256F"
     fi
 fi
@@ -21,8 +21,7 @@ DISABLE_AUTO_TITLE="true"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator context history dir dir_writable vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status time)
 
-### FONT ICONS - @see https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#option-2-use-a-programmer-font ###
-POWERLEVEL9K_MODE='nerdfont-complete' # awesome-fontconfig || nerdfont-complete || awesome-patched
+POWERLEVEL9K_MODE='nerdfont-complete'
 
 ### GENERAL ###
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -192,78 +191,70 @@ else
 fi
 
 ### GO ###
-export GOPATH=$HOME/.golang
+export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
-export GOROOT=/usr/local/opt/go/libexec
+export GOROOT=/opt/homebrew/opt/go/libexec/
 export PATH=$PATH:$GOROOT/bin
 
 ### PATHs ###
 
-if brew ls --versions openssl > /dev/null; then
-  export PATH="$(brew --prefix openssl)/bin:$PATH"
-fi
+export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
 
 # if brew ls --versions openssl@1.1 > /dev/null; then
 #   export PATH="$(brew --prefix openssl@1.1)/bin:$PATH"
 # fi
 
-if brew ls --versions icu4c > /dev/null; then
-  export PATH="$(brew --prefix icu4c)/bin:$PATH"
-  export PATH="$(brew --prefix icu4c)/sbin:$PATH"
-fi
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
-if brew ls --versions gnu-sed > /dev/null; then
-  export PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"
-fi
+export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 
-if brew ls --versions python > /dev/null; then
-  export PATH="$(brew --prefix python)/bin:$PATH"
-  export PATH="$(brew --prefix python)/libexec/bin:$PATH"
-fi
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 
-export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/Cellar/rabbitmq-c/0.9.0/lib/pkgconfig"
-export PATH=$PATH:/usr/local/opt/rabbitmq/sbin
+export PATH="/opt/homebrew/opt/python@3/libexec/bin:$PATH"
 
-# [ ! -z "$(brew ls --versions go)" ] && export PATH="$(brew --prefix go)/libexec/bin:$PATH"
-[ ! -z "$(brew ls --versions sqlite)" ] && export PATH="$(brew --prefix sqlite)/bin:$PATH"
-[ ! -z "$(brew ls --versions curl-openssl)" ] && export PATH="$(brew --prefix curl-openssl)/bin:$PATH"
-[ ! -z "$(brew ls --versions gettext)" ] && export PATH="$(brew --prefix gettext)/bin:$PATH"
-[ ! -z "$(brew ls --versions libxml2)" ] && export PATH="$(brew --prefix libxml2)/bin:$PATH"
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
-export PATH="$(brew --prefix)/bin:/usr/local/sbin:$HOME/.composer/vendor/bin:$PATH"
+export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 
-[ ! -z "$(brew ls --versions php)" ] && export PATH="$(brew --prefix php)/bin:$PATH"
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-
-# if [ -e "/Applications/Visual Studio Code.app" ]; then
-#   export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-# fi
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 # ﹅﹅﹅﹅﹅﹅﹅ ZSH ﹅﹅﹅﹅﹅﹅﹅
 # ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 
+# if type brew &>/dev/null; then
+#   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+#   rm -f "$HOME/.zcompdump"
+#   autoload -Uz compinit
+#   compinit
+# fi
+
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/allysonsilva/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # see https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 if [[ -z "$TERMINAL_VSCODE" ]]; then
-  ZSH_THEME="powerlevel9k/powerlevel9k"
+  ZSH_THEME="powerlevel10k/powerlevel10k"
 else
   ZSH_THEME="robbyrussell"
 fi
+
+if [[ ! -z "$TERMINALIZER" ]]; then
+  ZSH_THEME="robbyrussell"
+fi
+
 # ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 # agnoster                         ✓
 # amuse                            ✓
 # materialshell-dark               ✓
 # materialshell-oceanic            ✓
 # materialshellelectro             ✓
-# powerlevel9k/powerlevel9k        ✓
+# powerlevel10k/powerlevel10k      ✓
 # robbyrussell                     ✓
 # ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 
@@ -271,7 +262,10 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git npm node laravel5 docker docker-compose z httpie)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting docker docker-compose kubectl fzf-tab z.lua)
+
+# @see https://github.com/zsh-users/zsh-syntax-highlighting/issues/349
+zle_highlight+=(paste:none)
 
 source $ZSH/oh-my-zsh.sh
 

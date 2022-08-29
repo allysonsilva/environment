@@ -1,5 +1,4 @@
 {
-  // Declarations
   "var statement": {
     "prefix": "v",
     "body": "var ${0}",
@@ -40,7 +39,6 @@
     "body": "const {${1:name}} = ${2:value};",
     "description": "destructuring const assignment"
   },
-  // Flow Control
   "if statement": {
     "prefix": "if",
     "body": "if (${1:condition}) {\n\t${0}\n}",
@@ -111,7 +109,6 @@
     "body": "switch (${1:expr}) {\n\tcase ${2:value}:\n\t\treturn $0;\n\tdefault:\n\t\treturn;\n}",
     "description": "switch case"
   },
-  // Functions
   "anonymous function": {
     "prefix": "f",
     "body": "function (${1:arguments}) {\n\t${0}\n}",
@@ -162,7 +159,6 @@
     "body": "function* ${1:name}(${2:arguments}) {\n\t${0}\n}",
     "description": "named generator function (ES6)"
   },
-  // Iterables
   "sequence of 0..n": {
     "prefix": "seq",
     "body": "[...Array(${1:length}).keys()]${0}",
@@ -193,7 +189,6 @@
     "body": "${1}.find(${2:item} => {\n\t${0}\n});",
     "description": "find"
   },
-  // Objects and Classes
   "object literal": {
     "prefix": "ol",
     "body": "{\n\tkv${0}\n};",
@@ -265,7 +260,6 @@
     "body": "Object.assign({}, ${1:original}, ${2:source})",
     "description": "Object.assign copy (shallow clone)"
   },
-  // Returning values
   "return": {
     "prefix": "r",
     "body": "return ${0};",
@@ -281,7 +275,6 @@
     "body": "return (\n\t${0}\n);",
     "description": "return complex value (such as JSX components)"
   },
-  // Types
   "typeof": {
     "prefix": "tof",
     "body": "typeof ${1:source} === '${2:undefined}'",
@@ -292,7 +285,6 @@
     "body": "${1:source} instanceof ${2:Object}",
     "description": "instanceof"
   },
-  // Promises
   "Promise (ES6)": {
     "prefix": "pr",
     "body": "new Promise((resolve, reject) => {\n\t${0}\n})",
@@ -308,7 +300,6 @@
     "body": "${1:promise}.catch((${2:err}) => {\n\t${0}\n})",
     "description": "Promise.catch"
   },
-  // ES6 Modules
   "export (ES6)": {
     "prefix": "ex",
     "body": "export ${1:member};",
@@ -329,7 +320,6 @@
     "body": "import ${1:*} as ${2:name} from '${3:module}';",
     "description": "import module as (ES6)"
   },
-  // Node.js
   "Node.js style callback": {
     "prefix": "cb",
     "body": "(err, ${1:value}) => {${0}}",
@@ -385,7 +375,6 @@
     "body": "${1:emitter}.on('${2:event}', (${3:arguments}) => {\n\t${0}\n});",
     "description": "event handler"
   },
-  // BDD Testing (Mocha, Jasmine, etc.)
   "describe": {
     "prefix": "desc",
     "body": "describe('${1:description}', () => {\n\t${0}\n});",
@@ -431,7 +420,6 @@
     "body": "afterEach(() => {\n\t${0}\n});",
     "description": "after each test"
   },
-  // Console
   "console.log": {
     "prefix": "cl",
     "body": "console.log(${0});",
@@ -462,7 +450,6 @@
     "body": "console.warn('${0}', ${0});",
     "description": "console.warn labeled"
   },
-  // Timers
   "setTimeout": {
     "prefix": "st",
     "body": "setTimeout(() => {\n\t${0}\n}, ${1:delay});",
@@ -483,7 +470,6 @@
     "body": "process.nextTick(() => {\n\t${0}\n});",
     "description": "process nextTick"
   },
-  // Miscellaneous
   "insert 'use strict' statement": {
     "prefix": "us",
     "body": "'use strict';",

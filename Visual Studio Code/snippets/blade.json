@@ -1,5 +1,4 @@
 {
-    /* Extending a layout */
     "Extend layout": {
         "prefix": "b:extends",
         "body": [
@@ -32,7 +31,6 @@
         ],
         "description": "Blade - content section show"
     },
-    /* Include sub-view */
     "Include view": {
         "prefix": "b:include",
         "body": [
@@ -40,7 +38,6 @@
         ],
         "description": "Blade - include view"
     },
-    /* If Statements */
     "If-block": {
         "prefix": "b:if",
         "body": [
@@ -72,7 +69,6 @@
         ],
         "description": "Blade - @hasSection condition"
     },
-    /* Loops */
     "For-block": {
         "prefix": "b:for",
         "body": [
@@ -111,7 +107,6 @@
         ],
         "description": "Blade - @while block"
     },
-    /* Rendering views for collections */
     "each loop": {
         "prefix": "b:each",
         "body": [
@@ -119,7 +114,6 @@
         ],
         "description": "Blade - @each loop"
     },
-    /* Comments */
     "blade comment": {
         "prefix": "b:comment",
         "body": [
@@ -128,7 +122,6 @@
         ],
         "description": "Blade - comment block"
     },
-    /* Display Data */
     "blade echo-data": {
         "prefix": "b:echo",
         "body": [
@@ -159,7 +152,6 @@
         ],
         "description": "Blade - displaying JavaScript variables in a large portion of your template"
     },
-    /* Stacks */
     "Push stack": {
         "prefix": "b:push",
         "body": [
@@ -176,7 +168,6 @@
         ],
         "description": "Blade - @stack"
     },
-    /* Service Injection */
     "inject service": {
         "prefix": "b:inject",
         "body": [
@@ -185,7 +176,6 @@
         ],
         "description": "Blade - @inject Service"
     },
-    /* Authorizing */
     "can": {
         "prefix": "b:can",
         "body": [
@@ -226,7 +216,6 @@
         ],
         "description": "Blade - display a portion of the page only if the user is authorized to perform a given action."
     },
-    /* v5.3 - $loop variable */
     "loop": {
         "prefix": "b:loop",
         "body": [
@@ -270,7 +259,6 @@
         ],
         "description": "Blade - include a view that may or may not be present, you should use the @includeIf directive"
     },
-    /* v5.4 */
     "component": {
         "prefix": "b:component",
         "body": [
@@ -314,7 +302,6 @@
         ],
         "description": "Blade - includeWhen"
     },
-    /* v5.5 */
     "auth": {
         "prefix": "b:auth",
         "body": [

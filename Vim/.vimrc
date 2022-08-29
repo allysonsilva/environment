@@ -91,7 +91,7 @@ Plug '2072/PHP-Indenting-for-VIm'
   " Development Tool Integration
   " ++++++++++++++++++++++++++++
 
-Plug '/usr/local/opt/fzf'
+Plug '/opt/homebrew/opt/fzf'
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -618,7 +618,7 @@ map <C-t> :NERDTreeToggle<CR>
 " --- nerdtree-git-plugin ---
 " ###########################
 
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
@@ -631,7 +631,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
 \ }
 
-let g:NERDTreeShowIgnoredStatus = 1
+let g:NERDTreeGitStatusShowIgnored = 1
 
 " ###################
 " --- Vim Airline ---
