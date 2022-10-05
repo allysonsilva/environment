@@ -218,6 +218,8 @@ export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 
 export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 
+export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
+
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
